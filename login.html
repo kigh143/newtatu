@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Welcome to tatuapp.com</title>
+        
+        <!-- Vendor CSS -->
+        <link href="css/animate.min.css" rel="stylesheet">
+        <link href="css/palette.css" rel="stylesheet">
+        <link href="css/material-design-iconic-font.min.css" rel="stylesheet">
+        <!-- <link href="www.tatuapp.com/css/material-design-iconic-font.min.css" rel="stylesheet">  user this line of code online for the fonts to load-->
+        <link href="css/app.min.1.css" rel="stylesheet">
+        <link href="css/app.min.2.css" rel="stylesheet">
+    </head>
+    
+    <body>
+        <div class="login" data-lbg="teal">
+            <!-- Login -->
+            <div class="l-block toggled" id="l-login">
+                <div class="lb-header palette-Teal bg">
+                    <i class="zmdi zmdi-account-circle"></i>
+                    Hi there! Please Sign in
+                </div>
+                <div class="lb-body">
+                                <form action="Wall.html" method="post" accept-charset="utf-8">
+                    <div class="form-group fg-float">
+                        <div class="fg-line">
+                            <input type="text" name="phone" value="" class="input-sm form-control fg-input">
+                            <label class="fg-label">Mobile number</label>
+                        </div>
+                         <small class="help-block"></small>
+                    </div>
+                    <div class="form-group fg-float">
+                        <div class="fg-line">
+                            <input type="password" name="password" class="input-sm form-control fg-input">
+                            <label class="fg-label">Password</label>
+                        </div>
+                         <small class="help-block"></small>
+                    </div>
+                    <button class="btn palette-Teal bg">Sign in</button>
+
+                    <div class="m-t-20">
+                        <a data-block="#l-register" data-bg="blue" class="palette-Teal text d-block m-b-5" href="#">Creat an account</a>
+                        <a data-block="#l-forget-password" data-bg="purple" href="#" class="palette-Teal text">Forgot password?</a>
+                    </div>
+                </div>
+                </form>            </div>
+
+            <!-- Register -->
+            <div class="l-block" id="l-register">
+                <div class="lb-header palette-Blue bg">
+                    <i class="zmdi zmdi-account-circle"></i>
+                    Create an account
+                </div>
+                <form action="Login/signup" id="signup_form" method="post" accept-charset="utf-8">
+                <div>
+                    <div class="alert alert-danger" id="errors" style="display:none; text-align:left; background:"></div>
+                    <div id="loader" style="color:lime; text-align:center;"></div>
+                </div>
+                <div class="lb-body">
+                    <div class="form-group fg-float">
+                        <div class="fg-line">
+                            <input type="text" name="signup_phone" class="input-sm form-control fg-input">
+                            <label class="fg-label">Phone</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group fg-float">
+                        <div class="fg-line">
+                            <input type="text" name="email" class="input-sm form-control fg-input">
+                            <label class="fg-label">Email Address</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group fg-float">
+                        <div class="fg-line">
+                            <input type="password" name="signup_password" class="input-sm form-control fg-input">
+                            <label class="fg-label">Password</label>
+                        </div>
+                    </div>
+                    <button class="btn palette-Blue bg" id="signup_btn">Create Account</button>
+                    </form>                    <div class="m-t-30">
+                        <a data-block="#l-login" data-bg="teal" class="palette-Blue text d-block m-b-5" href="#">Already have an account?</a>
+                        <a data-block="#l-forget-password" data-bg="purple" href="#" class="palette-Blue text">Forgot password?</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Forgot Password -->
+            <div class="l-block" id="l-forget-password">
+                <div class="lb-header palette-Purple bg">
+                    <i class="zmdi zmdi-account-circle"></i>
+                    Forgot Password?
+                </div>
+                <div class="lb-body" id="bigdiv">
+                    <p class="m-b-30">Please provide your email address attached to your  account.</p>
+                    <form action="Login/forgotpass" id="fogotForm" method="post" accept-charset="utf-8">
+                    <div class="form-group fg-float">
+                        <div class="fg-line">
+                            <input type="text" name="email" class="input-sm form-control fg-input">
+                            <label class="fg-label">Email Address</label>
+                        </div>
+                        <small class="help-block" id="showError"></small>
+                    </div>
+                    <button class="btn palette-Purple bg" id="fogotbtn">Send request</button>
+                    </form>                    <div class="m-t-30">
+                        <a data-block="#l-login" data-bg="teal" class="palette-Purple text d-block m-b-5" href="#">Already have an account?</a>
+                        <a data-block="#l-register" data-bg="blue" href="#" class="palette-Purple text">Create an account</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Javascript Libraries -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/waves.min.js"></script>
+        <script src="js/functions.js"></script>
+        <script src="js/signup.js"></script>
+        <script src="js/forgotpass.js"></script>
+    </body>
+</html>

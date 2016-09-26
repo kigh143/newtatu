@@ -1,0 +1,438 @@
+
+<!DOCTYPE html>
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Kigh Ivan's chat list and messages</title>
+        <link href="css/animate.min.css" rel="stylesheet">
+        <link href="css/material-design-iconic-font.min.css" rel="stylesheet">
+      <!--   <link href="css/material-design-iconic-font.min.css" rel="stylesheet"> -->
+        <link href="css/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+        <link href="css/palette.css" rel="stylesheet">
+        <link href="css/app.min.1.css" rel="stylesheet">
+        <link href="css/app.min.2.css" rel="stylesheet">
+        <link href="css/tatu.css" rel="stylesheet">
+    </head>
+
+    <body data-ma-header="teal">
+        <header id="header" class="media">
+            <div class="pull-left h-logo">
+                <a href="" class="hidden-xs">
+                    Tatu App
+                </a>
+                <div class="menu-collapse" data-ma-action="sidebar-open" data-ma-target="main-menu">
+                    <div class="mc-wrap">
+                        <div class="mcw-line top palette-White bg"></div>
+                        <div class="mcw-line center palette-White bg"></div>
+                        <div class="mcw-line bottom palette-White bg"></div>
+                    </div>
+                </div>
+            </div>
+
+            <ul class="pull-right h-menu">
+                <li class="hm-search-trigger">
+                    <a href="#" data-ma-action="search-open">
+                        <i class="hm-icon zmdi zmdi-search"></i>
+                    </a>
+                </li>
+                <li class="dropdown hidden-xs">
+                    <a data-toggle="dropdown" href="#"><i class="hm-icon zmdi zmdi-more-vert"></i></a>
+                    <ul class="dropdown-menu dm-icon pull-right">
+                        <li>
+                            <a href="Logout/index"><i class="zmdi zmdi-settings"></i> log out</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="hm-alerts" data-user-alert="sua-messages" data-ma-action="sidebar-open" data-ma-target="user-alerts">
+                    <a href="#"><i class="hm-icon zmdi zmdi-notifications"></i></a>
+                </li>
+                <li class="dropdown hm-profile">
+                    <a href="Profile.html">
+                        <img id="userPic"  src="images/people/1f272b623fc45812b06f79b4305571376ab8bc9e.jpeg" alt="Kigh Ivan">
+                    </a>
+                </li>
+            </ul>
+
+            <div class="media-body h-search" >
+                <form action="Search/index" id="searcfm" class="p-relative" method="post" accept-charset="utf-8">
+                    <input type="text" class="hs-input" placeholder="Search for people" id='search'/>
+                     <i id='itag' class="zmdi zmdi-search hs-reset" data-ma-action="search-clear"></i>
+                    </form>
+                    </div>
+                <div style='position: relative;'>
+                <div class='col-md-12 col-sm-12 col-xs-12' style='background: #eff; border-radius:3px; display:none; z-index:2050; border:1px solid #ccc; overflow:auto; position: absolute; height:400px;' id='results'>
+                    
+                </div>
+                </div>
+        </header>
+        <section id="main">
+           <aside id="s-user-alerts" class="sidebar">
+                <ul class="tab-nav tn-justified tn-icon m-t-10" data-tab-color="teal">
+                    <li><a class="sua-messages" href="#sua-messages" data-toggle="tab"><i class="zmdi zmdi-email"></i></a></li>
+                    <li><a class="sua-notifications" href="#sua-notifications" data-toggle="tab"><i class="zmdi zmdi-notifications"></i></a></li>
+                </ul>
+
+                <div class="tab-content">
+                    <div class="tab-pane fade" id="sua-messages">
+                        <ul class="sua-menu list-inline list-unstyled palette-Light-Blue bg">
+                            <li><a href="#" data-ma-action="sidebar-close"><i class="zmdi zmdi-close"></i> Close</a></li>
+                        </ul>
+
+                        <div class="list-group lg-alt c-overflow" id="showNewMessages" >
+                            
+                        </div>
+
+                        <a href="#" class="btn btn-float btn-danger m-btn">
+                            <i class="zmdi zmdi-plus"></i>
+                        </a>
+                    </div>
+                    <div class="tab-pane fade" id="sua-notifications">
+                        <ul class="sua-menu list-inline list-unstyled palette-Orange bg">
+                            <li><a href="#" data-ma-action="sidebar-close"><i class="zmdi zmdi-close"></i> Close</a></li>
+                        </ul>
+                        <!-- div that gets the new notoficaions -->
+                        <div class="list-group lg-alt c-overflow" id="showNotifications">
+                        
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <aside id="s-main-menu" class="sidebar">
+                <div class="smm-header">
+                    <i class="zmdi zmdi-long-arrow-left" data-ma-action="sidebar-close"></i>
+                </div>
+                <ul class="smm-alerts">
+                    <li data-user-alert="sua-messages" data-ma-action="sidebar-open" data-ma-target="user-alerts">
+                        <i class="zmdi zmdi-email"></i>
+                    </li>
+                    <li data-user-alert="sua-notifications" data-ma-action="sidebar-open" data-ma-target="user-alerts">
+                        <i class="zmdi zmdi-notifications"></i>
+                    </li>
+                </ul>
+                <ul class="main-menu">
+                    <li class="sub-menu active">
+                        <ul>
+                             <li><a href="Wall.html"><i class="zmdi zmdi-home m-r-5"></i> Home</a></li>
+                            <li><a href="Profile.html"> <i class="zmdi zmdi-account m-r-5"></i> Profile</a></li>
+                            <li><a href="notification.html"><i class="zmdi zmdi-notifications m-r-5"></i> Notifications</a></li>
+                            <li><a href="messages.html"> <i class="zmdi zmdi-email m-r-5"></i> Messages</a></li>
+                            <li><a href="Contacts/index"> <i class="zmdi  zmdi-local-wc m-r-5"></i> people</a></li>
+                            <li><a href="Help/index"> <i class="zmdi  zmdi-help"></i> Help us improve tatu</a></li>
+                        </ul>
+                    </li>
+                </ul> 
+            </aside>
+
+            <section id="content">
+                <div class="container">
+                    <div class="c-header">
+                        <h2>Messages</h2>
+                    </div>
+                    <div class="card clearfix" id="messages">
+                        <div class="ms-menu">
+                            <div class="ms-user clearfix palette-Teal-400 bg">
+                                <img src="images/people/1f272b623fc45812b06f79b4305571376ab8bc9e.jpeg" alt="">
+                                <div>Signed in as <br/>kigh143@gmail.com</div>
+                            </div>
+
+                            <div class="list-group lg-alt m-t-10  c-overflow">
+
+                                <a class="list-group-item media" rel="Messages/clearCount" data-role="39" href="Messages/index/39/kwizera innocent" id="messageList">
+                        <div class="pull-left">
+                            <img src="images/people/2890ecbb8c4678f33b636b639487e9d8f15efb35.jpeg" alt="kwizera innocent" class="avatar-img">
+                        </div><div class="media-body">
+                            <div class="lgi-heading">kwizera innocent</div>
+                            <small class="lgi-text">Programmer at xaexia</small>
+                        </div>
+                    </a><a class="list-group-item media" rel="Messages/clearCount" data-role="42" href="Messages/index/42/Rhoda Awato" id="messageList">
+                        <div class="pull-left">
+                            <img src="images/people/thumbs/070285288510945866_1579644172247312_1202058501136444375_o[1].jpg" alt="Rhoda Awato" class="avatar-img">
+                        </div><div class="media-body">
+                            <div class="lgi-heading">Rhoda Awato</div>
+                            <small class="lgi-text"></small>
+                        </div>
+                    </a><a class="list-group-item media" rel="Messages/clearCount" data-role="37" href="Messages/index/37/Mukasa Keny" id="messageList">
+                        <div class="pull-left">
+                            <img src="images/people/18759473bb1e290994395553f71b5a9c5ad67e42.jpeg" alt="Mukasa Keny" class="avatar-img">
+                        </div><div class="media-body">
+                            <div class="lgi-heading">Mukasa Keny</div>
+                            <small class="lgi-text"></small>
+                        </div>
+                    </a><a class="list-group-item media" rel="Messages/clearCount" data-role="109" href="Messages/index/109/nahabwe brian" id="messageList">
+                        <div class="pull-left">
+                            <img src="images/people/tatuUser.png" alt="nahabwe brian" class="avatar-img">
+                        </div><div class="media-body">
+                            <div class="lgi-heading">nahabwe brian</div>
+                            <small class="lgi-text"></small>
+                        </div>
+                    </a><a class="list-group-item media" rel="Messages/clearCount" data-role="99" href="Messages/index/99/Hellen" id="messageList">
+                        <div class="pull-left">
+                            <img src="images/people/168e1666ebeb692145321204180172cb1552fd7b.jpeg" alt="Hellen" class="avatar-img">
+                        </div><div class="media-body">
+                            <div class="lgi-heading">Hellen</div>
+                            <small class="lgi-text"></small>
+                        </div>
+                    </a><a class="list-group-item media" rel="Messages/clearCount" data-role="104" href="Messages/index/104/Angee Jackline" id="messageList">
+                        <div class="pull-left">
+                            <img src="images/people/947a919711debaa8f395159ce6d657520bc2a0ac.jpeg" alt="Angee Jackline" class="avatar-img">
+                        </div><div class="media-body">
+                            <div class="lgi-heading">Angee Jackline</div>
+                            <small class="lgi-text">Business Woman</small>
+                        </div>
+                    </a>                            </div>
+
+                        </div>
+
+                        <div class="ms-body">
+                            <div class="action-header clearfix palette-Teal-400 bg">
+                                <div class="ah-label hidden-xs palette-White text">
+                                    MUKASA KENY                                </div>
+
+                                <div class="menu-collapse visible-xs" data-ma-action="message-toggle">
+                                    <div class="mc-wrap">
+                                        <div class="mcw-line top palette-White bg"></div>
+                                        <div class="mcw-line center palette-White bg"></div>
+                                        <div class="mcw-line bottom palette-White bg"></div>
+                                    </div>
+                                </div>
+
+                                <ul class="actions a-alt">
+                                    <li class="dropdown">
+
+                                        <a href="#" aria-expanded="true"  data-toggle="modal" 
+   data-target="#myModal" ><i class="zmdi zmdi-camera"></i></a>                                        
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="">
+                                <div class="panel-body" id="messagesSent" style="height:400px; overflow:auto;">
+                                <div class="rows" id="receiver">
+                                                                <div class="col-md-7" id="receiver-1">
+                                                                    <div id="reciever-2" class="thumbnail messageBox">
+                                                            <div id="close" data-role="150" rel="Messages/deleteMessage">x</div>
+                                                                    <h5>
+                                                                        Mukasa Keny
+                                                                        <font id="h5-font">
+                                                                        25 Jul 2016   00:07 am
+                                                                        </font>
+                                                                     </h5>Morning Boss 
+                                                                    </div>
+                                                                </div>
+                                                            </div><div class="rows" id="LoogedUser" >
+                                                        <div class="col-md-4"></div>
+                                                        <div id="loggedUser-1" class="col-md-8">
+                                                            <div id="loggedUser-2" class="thumbnail messageBox">
+                                                            <div id="close" data-role="153" rel="Messages/deleteMessage">x</div>
+                                                                <h5>
+                                                                    Kigh Ivan
+                                                                    <font id="loggedUser-font">
+                                                                        25  Jul 2016 06:07 am
+                                                                    </font>
+                                                                </h5>The database problem was not on us, its the hosting guys that have zibs
+                                                            </div>
+                                                        </div>
+                                                    </div><div class="rows" id="LoogedUser" >
+                                                        <div class="col-md-4"></div>
+                                                        <div id="loggedUser-1" class="col-md-8">
+                                                            <div id="loggedUser-2" class="thumbnail messageBox">
+                                                            <div id="close" data-role="165" rel="Messages/deleteMessage">x</div>
+                                                                <h5>
+                                                                    Kigh Ivan
+                                                                    <font id="loggedUser-font">
+                                                                        27  Jul 2016 06:07 am
+                                                                    </font>
+                                                                </h5>testing one two 
+                                                            </div>
+                                                        </div>
+                                                    </div><div class="rows" id="LoogedUser" >
+                                                        <div class="col-md-4"></div>
+                                                        <div id="loggedUser-1" class="col-md-8">
+                                                            <div id="loggedUser-2" class="thumbnail messageBox">
+                                                            <div id="close" data-role="172" rel="Messages/deleteMessage">x</div>
+                                                                <h5>
+                                                                    Kigh Ivan
+                                                                    <font id="loggedUser-font">
+                                                                        27  Jul 2016 11:07 am
+                                                                    </font>
+                                                                </h5>hehehe why are you laughing
+                                                            </div>
+                                                        </div>
+                                                    </div><div class="rows" id="receiver">
+                                                                <div class="col-md-7" id="receiver-1">
+                                                                    <div id="reciever-2" class="thumbnail messageBox">
+                                                            <div id="close" data-role="186" rel="Messages/deleteMessage">x</div>
+                                                                    <h5>
+                                                                        Mukasa Keny
+                                                                        <font id="h5-font">
+                                                                        01 Aug 2016   14:08 pm
+                                                                        </font>
+                                                                     </h5>hihihi
+
+                                                                    </div>
+                                                                </div>
+                                                            </div><div class="rows" id="LoogedUser" >
+                                                        <div class="col-md-4"></div>
+                                                        <div id="loggedUser-1" class="col-md-8">
+                                                            <div id="loggedUser-2" class="thumbnail messageBox">
+                                                            <div id="close" data-role="187" rel="Messages/deleteMessage">x</div>
+                                                                <h5>
+                                                                    Kigh Ivan
+                                                                    <font id="loggedUser-font">
+                                                                        03  Aug 2016 02:08 am
+                                                                    </font>
+                                                                </h5><img src="images/messages/156dccd5c2e6ed0aae5dd711538f4217.jpg"/>nice jst trying 
+                                                            </div>
+                                                        </div>
+                                                    </div>                                </div>
+                                <div class="ms-reply">
+                                <form action="Messages/send" id="messageform" method="post" accept-charset="utf-8">
+                                    <textarea placeholder="type a message.." id="messagetosend" data-role="37"></textarea>
+                                    <button type="submit" id="sendmessagebtn"><i class="zmdi zmdi-mail-send"></i></button>                                </form>                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <footer id="footer">
+                Copyright &copy; 2016 Tatuapp.com
+            </footer>
+        </section>
+        <div class="page-loader palette-Teal bg">
+            <div class="preloader pl-xl pls-white">
+                <svg class="pl-circular" viewBox="25 25 50 50">
+                    <circle class="plc-path" cx="50" cy="50" r="20"/>
+                </svg>
+            </div>
+        </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" 
+   aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel">
+              Send Mukasa Keny an image
+
+                <button class="btn btn-success" id="cancelIt" style="float:right;">cancel</button>
+            </h4>
+         </div>
+         <div class="modal-body">
+         <div id="imagePlace" style="margin-bottom:10px;">
+             <img  style="max-width:100%;" />
+         </div>
+            <form method="post" action="Messages/sendImage" enctype="multipart/form-data" id="">
+                <input type="file" class="form-control" name="userfile" id="messageImage">
+                <input type="hidden" name="user_id" value="37">
+                <input type="hidden" name="username" value="Mukasa Keny">
+                <br/>
+                <textarea id="caption" name="caption" class="form-control" style="display:none; margin:10px 0px 10px; border:1px solid #ddd; padding:10px; border-radius:3px;" placeholder="Add a caption"></textarea>
+                <button id="sendImageBtn" type="submit" name="sendImg" ass="btn btn-primary">send image</button>
+            </form>
+
+         </div>
+      </div><!-- /.modal-content -->
+</div><!-- /.modal -->
+
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="js/waves.min.js"></script>
+        <script src="js/bootstrap-growl.min.js"></script>
+        <script src="js/functions.js"></script>
+        <script src="js/actions.js"></script>
+        <script src="js/demo.js"></script>
+        <script src="js/search.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function() {
+            var $sendmessagebtn = $("#sendmessagebtn");
+            var $messageform    = $("#messageform");
+            $sendmessagebtn.on("click", function(e){
+                 e.preventDefault();
+                if( $("#messagetosend").val().length === 0  || $("#messagetosend").val() === ''){
+                    $("#messagetosend").addClass("error");
+                } else {
+                    $sendmessagebtn.attr("disabled", "disabled");
+                    var message   = $("#messagetosend").val();
+                    var person_id = $("#messagetosend").attr("data-role");
+                    $.ajax({
+                        url:$messageform.attr("action"),
+                        type:"post",
+                        dataType:"text",
+                        data:{message:message, person_id:person_id},
+                        success: function(info)
+                        {
+                            $sendmessagebtn.removeAttr("disabled");
+                            $("#messagesSent").append(info);
+                        }
+                    });
+                }
+                e.preventDefault();
+            });
+
+            $(document).on('mouseover','.messageBox', function(){
+                $(this).children('#close').show();
+            });
+            $(document).on('mouseout','.messageBox', function(){
+                $(this).children('#close').hide();
+            });
+
+            $(document).on('click','#close', function(){
+                var url = $(this).attr('rel');
+                 console.log(url);
+                var $this = $(this);
+                var messageId = $(this).attr('data-role');
+                console.log(messageId);
+                $.ajax({
+                    url:url, type:"post", dataType:"text", data:{msg:messageId}, success:function(info){
+                        $($this).parents('.rows').fadeOut();
+                         console.log(info);
+                    }
+                });
+            });
+
+//this is to clear  the count on the messages when clicked
+            $(document).on('click','#messageList',function(){
+                var $this = $(this);
+                $($this).children('.counter').hide();
+                var url = $($this).attr('rel');
+                var personId = $($this).attr('data-role');
+                $.ajax({
+                    url:url, type:"post", dataType:"text", data:{id:personId}, success:function(info){
+                        console.log(info);
+                    }
+                });
+            });
+
+            $(document).on('','#messagetosend', function(){
+                alert("entered");
+            });
+
+//sending an image in messages
+            $(document).on('change','#messageImage', function(){
+                // alert($(this).val());
+                var reader = new FileReader();
+                reader.onload = function(e){
+                    $('#imagePlace img').attr('src',e.target.result);
+                }
+                reader.readAsDataURL(this.files[0]);
+                $(this).siblings('#caption').show();
+            });
+
+
+
+
+
+        });
+            $(document).ready(function(){
+            $('#messagesSent').animate({scrollTop:
+            $(document).height()},"slow");
+            return false;
+            });
+        </script>
+    </body>
+</html>

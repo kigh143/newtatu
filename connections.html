@@ -1,0 +1,680 @@
+
+<!DOCTYPE html>
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Welcome to tatu</title>
+        <link href="css/animate.min.css" rel="stylesheet">
+        <link href="css/material-design-iconic-font.min.css" rel="stylesheet">
+        <link href="css/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+        <link href="css/palette.css" rel="stylesheet">
+        <link href="css/app.min.1.css" rel="stylesheet">
+        <link href="css/app.min.2.css" rel="stylesheet">
+    </head>
+
+    <body data-ma-header="teal">
+          <header id="header" class="media">
+            <div class="pull-left h-logo">
+                <a href="" class="hidden-xs">
+                    Tatu App
+                </a>
+                <div class="menu-collapse" data-ma-action="sidebar-open" data-ma-target="main-menu">
+                    <div class="mc-wrap">
+                        <div class="mcw-line top palette-White bg"></div>
+                        <div class="mcw-line center palette-White bg"></div>
+                        <div class="mcw-line bottom palette-White bg"></div>
+                    </div>
+                </div>
+            </div>
+
+            <ul class="pull-right h-menu">
+                <li class="hm-search-trigger">
+                    <a href="#" data-ma-action="search-open">
+                        <i class="hm-icon zmdi zmdi-search"></i>
+                    </a>
+                </li>
+                <li class="dropdown hidden-xs">
+                    <a data-toggle="dropdown" href="#"><i class="hm-icon zmdi zmdi-more-vert"></i></a>
+                    <ul class="dropdown-menu dm-icon pull-right">
+                        <li>
+                            <a href="Logout/index"><i class="zmdi zmdi-settings"></i> log out</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="hm-alerts" data-user-alert="sua-messages" data-ma-action="sidebar-open" data-ma-target="user-alerts">
+                    <a href="#"><i class="hm-icon zmdi zmdi-notifications"></i></a>
+                </li>
+                <li class="dropdown hm-profile">
+                    <a href="Profile.html">
+                        <img id="userPic"  src="images/people/1f272b623fc45812b06f79b4305571376ab8bc9e.jpeg" alt="Kigh Ivan">
+                    </a>
+                </li>
+            </ul>
+
+            <div class="media-body h-search" >
+                <form action="Search/index" id="searcfm" class="p-relative" method="post" accept-charset="utf-8">
+                    <input type="text" class="hs-input" placeholder="Search for people" id='search'/>
+                     <i id='itag' class="zmdi zmdi-search hs-reset" data-ma-action="search-clear"></i>
+                    </form>
+                    </div>
+                <div style='position: relative;'>
+                <div class='col-md-12 col-sm-12 col-xs-12' style='background: #eff; border-radius:3px; display:none; z-index:2050; border:1px solid #ccc; overflow:auto; position: absolute; height:400px;' id='results'>
+                    
+                </div>
+                </div>
+        </header>
+        <section id="main">
+           <aside id="s-user-alerts" class="sidebar">
+                <ul class="tab-nav tn-justified tn-icon m-t-10" data-tab-color="teal">
+                    <li><a class="sua-messages" href="#sua-messages" data-toggle="tab"><i class="zmdi zmdi-email"></i></a></li>
+                    <li><a class="sua-notifications" href="#sua-notifications" data-toggle="tab"><i class="zmdi zmdi-notifications"></i></a></li>
+                </ul>
+
+                <div class="tab-content">
+                    <div class="tab-pane fade" id="sua-messages">
+                        <ul class="sua-menu list-inline list-unstyled palette-Light-Blue bg">
+                            <li><a href="#" data-ma-action="sidebar-close"><i class="zmdi zmdi-close"></i> Close</a></li>
+                        </ul>
+
+                        <div class="list-group lg-alt c-overflow" id="showNewMessages" >
+                            
+                        </div>
+
+                        <a href="#" class="btn btn-float btn-danger m-btn">
+                            <i class="zmdi zmdi-plus"></i>
+                        </a>
+                    </div>
+                    <div class="tab-pane fade" id="sua-notifications">
+                        <ul class="sua-menu list-inline list-unstyled palette-Orange bg">
+                            <li><a href="#" data-ma-action="sidebar-close"><i class="zmdi zmdi-close"></i> Close</a></li>
+                        </ul>
+                        <!-- div that gets the new notoficaions -->
+                        <div class="list-group lg-alt c-overflow" id="showNotifications">
+                        
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <aside id="s-main-menu" class="sidebar">
+                <div class="smm-header">
+                    <i class="zmdi zmdi-long-arrow-left" data-ma-action="sidebar-close"></i>
+                </div>
+                <ul class="smm-alerts">
+                    <li data-user-alert="sua-messages" data-ma-action="sidebar-open" data-ma-target="user-alerts">
+                        <i class="zmdi zmdi-email"></i>
+                    </li>
+                    <li data-user-alert="sua-notifications" data-ma-action="sidebar-open" data-ma-target="user-alerts">
+                        <i class="zmdi zmdi-notifications"></i>
+                    </li>
+                </ul>
+                <ul class="main-menu">
+                    <li class="sub-menu active">
+                        <ul>
+                            <li><a href="Wall.html"><i class="zmdi zmdi-home m-r-5"></i> Home</a></li>
+                            <li><a href="Profile.html"> <i class="zmdi zmdi-account m-r-5"></i> Profile</a></li>
+                            <li><a href="notification.html"><i class="zmdi zmdi-notifications m-r-5"></i> Notifications</a></li>
+                            <li><a href="messages.html"> <i class="zmdi zmdi-email m-r-5"></i> Messages</a></li>
+                            <li><a href="Contacts/index"> <i class="zmdi  zmdi-local-wc m-r-5"></i> people</a></li>
+                            <li><a href="Help/index"> <i class="zmdi  zmdi-help"></i> Help us improve tatu</a></li>
+                        </ul>
+                    </li>
+                </ul> 
+            </aside>
+
+            <section id="content">
+                <div class="container">
+                    <div class="c-header">
+                        <h2>Kigh Ivan<small>Programmer</small></h2>
+                    </div>
+
+                    <div class="card" id="profile-main">
+
+                            <ul class="tab-nav tn-justified">
+                                <li class="waves-effect"><a href="About/index">About</a></li>
+                                <li class="waves-effect"><a href="Userupdate/index">Your Update</a></li>
+                                <li class="active waves-effect"><a href="Connections/index">Connections</a></li>
+                            </ul>
+
+                            <div class="pmb-block">
+                               <div class="contacts c-profile clearfix row">
+                                    <div class="rows" style="margin:0;">
+                                    <div class="col-md-6" style="border-right:1px solid #eee; margin-left:0px;">
+                                    <p>Followers</p>
+                                         <div class='media'>
+                    <a href='About/index/41/Mowzey' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/0adfd87194926c962131a5e710a1d08c5f691251.jpeg'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='41' class='pull-right btn btn-default btn-sm'>Following</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>Mowzey</h6>
+                       <font color='#aaa' style='font-size:11px;'> Programmer at xeaxia</font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/64/Ramlah Matovu' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/tatuUser.png'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='64' class='pull-right btn btn-default btn-sm'>Following</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>Ramlah Matovu</h6>
+                       <font color='#aaa' style='font-size:11px;'> System admin</font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/66/Ritah N' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/dream.jpg'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='66' class='pull-right btn btn-default btn-sm'>Following</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>Ritah N</h6>
+                       <font color='#aaa' style='font-size:11px;'> not working </font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/68/kibuuka Allan' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/computer.png'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='68' class='pull-right btn btn-default btn-sm'>Following</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>kibuuka Allan</h6>
+                       <font color='#aaa' style='font-size:11px;'> not working </font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/69/Martin Bossa' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/arrow.png'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='69' class='pull-right btn btn-default btn-sm'>Following</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>Martin Bossa</h6>
+                       <font color='#aaa' style='font-size:11px;'> not working </font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/70/martin hatanga' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/Untitled-1.png'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='70' class='pull-right btn btn-default btn-sm'>Following</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>martin hatanga</h6>
+                       <font color='#aaa' style='font-size:11px;'> not working </font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/71/Bbosa Jockins' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/tatuUser.png'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='71' class='pull-right btn btn-default btn-sm'>Following</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>Bbosa Jockins</h6>
+                       <font color='#aaa' style='font-size:11px;'> not working </font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/97/Julius Mukasa' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/76a74d5413adc0d1cd04d852cb320e5e856b22bf.jpeg'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='97' class='pull-right btn btn-default btn-sm'>Following</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>Julius Mukasa</h6>
+                       <font color='#aaa' style='font-size:11px;'> Business</font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/99/Hellen' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/168e1666ebeb692145321204180172cb1552fd7b.jpeg'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='99' class='pull-right btn btn-default btn-sm'>Following</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>Hellen</h6>
+                       <font color='#aaa' style='font-size:11px;'> not working </font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/109/nahabwe brian' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/tatuUser.png'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='109' class='pull-right btn btn-default btn-sm'>Following</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>nahabwe brian</h6>
+                       <font color='#aaa' style='font-size:11px;'> not working </font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/128/Viola Matanda' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/tatuUser.png'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='128' class='pull-right btn btn-default btn-sm'>Following</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>Viola Matanda</h6>
+                       <font color='#aaa' style='font-size:11px;'> not working </font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/130/Nassolo Pauline' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/tatuUser.png'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='130' class='pull-right btn btn-default btn-sm'>Following</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>Nassolo Pauline</h6>
+                       <font color='#aaa' style='font-size:11px;'> not working </font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/131/sharn' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/tatuUser.png'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='131' class='pull-right btn btn-default btn-sm'>Following</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>sharn</h6>
+                       <font color='#aaa' style='font-size:11px;'> not working </font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/133/Namasembe Teo' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/tatuUser.png'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='133' class='pull-right btn btn-default btn-sm'>Following</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>Namasembe Teo</h6>
+                       <font color='#aaa' style='font-size:11px;'> not working </font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/142/Elvo' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/a8ef2ddc5e97ea58e1ccae80c15150ca6eb11d44.jpeg'/>
+                    </a><a id='follow' rel='Connections/follow' data-role='142' class='pull-right btn btn-primary btn-sm'>Follow</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>Elvo</h6>
+                       <font color='#aaa' style='font-size:11px;'> not working </font>
+                    </div>
+                </div>                                    </div>
+                                    <div class="col-md-6">
+                                     <p>Following</p>
+                                         <div class='media'>
+                    <a href='About/index/37/Mukasa Keny' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/18759473bb1e290994395553f71b5a9c5ad67e42.jpeg'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='37' class='pull-right btn btn-default btn-sm'>Unfollow</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>Mukasa Keny</h6>
+                       <font color='#aaa' style='font-size:11px;'> not working </font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/39/kwizera innocent' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/2890ecbb8c4678f33b636b639487e9d8f15efb35.jpeg'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='39' class='pull-right btn btn-default btn-sm'>Unfollow</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>kwizera innocent</h6>
+                       <font color='#aaa' style='font-size:11px;'> programmer at xaexia</font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/42/Rhoda Awato' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/thumbs/070285288510945866_1579644172247312_1202058501136444375_o[1].jpg'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='42' class='pull-right btn btn-default btn-sm'>Unfollow</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>Rhoda Awato</h6>
+                       <font color='#aaa' style='font-size:11px;'> not working </font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/55/kyeyune Jackie' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/IMG-20160628-WA0006_-_Copy.jpg'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='55' class='pull-right btn btn-default btn-sm'>Unfollow</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>kyeyune Jackie</h6>
+                       <font color='#aaa' style='font-size:11px;'> not working </font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/56/MARY ESTHER' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/rBVaEVbyudOAPlpDAAJDOiMtf_M734.jpg'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='56' class='pull-right btn btn-default btn-sm'>Unfollow</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>MARY ESTHER</h6>
+                       <font color='#aaa' style='font-size:11px;'> not working </font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/58/Steve Kasajja' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/tatuUser.png'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='58' class='pull-right btn btn-default btn-sm'>Unfollow</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>Steve Kasajja</h6>
+                       <font color='#aaa' style='font-size:11px;'> Environmentalist- KCCA</font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/59/Nakabaale Ronald' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/0706760108IMG_20160426_155336.jpg'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='59' class='pull-right btn btn-default btn-sm'>Unfollow</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>Nakabaale Ronald</h6>
+                       <font color='#aaa' style='font-size:11px;'> Unit Supervisor- KCCA</font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/60/wally' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/Dr-House-use-brain-funny-wallpaper.jpg'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='60' class='pull-right btn btn-default btn-sm'>Unfollow</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>wally</h6>
+                       <font color='#aaa' style='font-size:11px;'> not working </font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/61/Ssenyonga Patrick' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/0758203821IMG_20160630_095833.jpg'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='61' class='pull-right btn btn-default btn-sm'>Unfollow</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>Ssenyonga Patrick</h6>
+                       <font color='#aaa' style='font-size:11px;'> Overall Supervisor- KCCA Sanitation</font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/62/Richard Ndagijimana' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/tatuUser.png'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='62' class='pull-right btn btn-default btn-sm'>Unfollow</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>Richard Ndagijimana</h6>
+                       <font color='#aaa' style='font-size:11px;'> not working </font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/63/Mukasa Ssali Douglas' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/IMG_20160417_162613.jpg'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='63' class='pull-right btn btn-default btn-sm'>Unfollow</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>Mukasa Ssali Douglas</h6>
+                       <font color='#aaa' style='font-size:11px;'> not working </font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/65/Taabu Joseph' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/tatuUser.png'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='65' class='pull-right btn btn-default btn-sm'>Unfollow</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>Taabu Joseph</h6>
+                       <font color='#aaa' style='font-size:11px;'> not working </font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/72/Bukenya Bryan' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/tatuUser.png'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='72' class='pull-right btn btn-default btn-sm'>Unfollow</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>Bukenya Bryan</h6>
+                       <font color='#aaa' style='font-size:11px;'> not working </font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/73/elvis joshua' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/tatuUser.png'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='73' class='pull-right btn btn-default btn-sm'>Unfollow</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>elvis joshua</h6>
+                       <font color='#aaa' style='font-size:11px;'> not working </font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/74/Katende Ronnie' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/tatuUser.png'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='74' class='pull-right btn btn-default btn-sm'>Unfollow</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>Katende Ronnie</h6>
+                       <font color='#aaa' style='font-size:11px;'> not working </font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/75/hashim' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/20111111_C4869_PHOTO_EN_6508.jpg'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='75' class='pull-right btn btn-default btn-sm'>Unfollow</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>hashim</h6>
+                       <font color='#aaa' style='font-size:11px;'> not working </font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/76/Joan Oshabahebwa' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/tatuUser.png'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='76' class='pull-right btn btn-default btn-sm'>Unfollow</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>Joan Oshabahebwa</h6>
+                       <font color='#aaa' style='font-size:11px;'> Student</font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/77/Marko' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/tatuUser.png'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='77' class='pull-right btn btn-default btn-sm'>Unfollow</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>Marko</h6>
+                       <font color='#aaa' style='font-size:11px;'> not working </font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/78/Allan Amanyire' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/tatuUser.png'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='78' class='pull-right btn btn-default btn-sm'>Unfollow</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>Allan Amanyire</h6>
+                       <font color='#aaa' style='font-size:11px;'> not working </font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/81/Youth Alliance Right' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/tatuUser.png'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='81' class='pull-right btn btn-default btn-sm'>Unfollow</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>Youth Alliance Right</h6>
+                       <font color='#aaa' style='font-size:11px;'> not working </font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/82/Trust Stephen' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/d98f9cbe-8328-45e7-a467-d488293b69e9.jpg'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='82' class='pull-right btn btn-default btn-sm'>Unfollow</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>Trust Stephen</h6>
+                       <font color='#aaa' style='font-size:11px;'> KCCA</font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/94/Jacque Nalubega' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src=''/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='94' class='pull-right btn btn-default btn-sm'>Unfollow</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>Jacque Nalubega</h6>
+                       <font color='#aaa' style='font-size:11px;'> ACCOUNTING</font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/102/Jane' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/81590283fc5858aa7eba28a91a6244ee0a02d32b.jpg'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='102' class='pull-right btn btn-default btn-sm'>Unfollow</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>Jane</h6>
+                       <font color='#aaa' style='font-size:11px;'> Farmer</font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/103/Johnson Mangeni' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/ec5ca901064e2390a7980f45b4be57529532d520.jpeg'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='103' class='pull-right btn btn-default btn-sm'>Unfollow</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>Johnson Mangeni</h6>
+                       <font color='#aaa' style='font-size:11px;'> ACCOUNTING</font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/104/Angee Jackline' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/947a919711debaa8f395159ce6d657520bc2a0ac.jpeg'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='104' class='pull-right btn btn-default btn-sm'>Unfollow</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>Angee Jackline</h6>
+                       <font color='#aaa' style='font-size:11px;'> Business Woman</font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/105/Wilson Lubega' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/968554685e034f0bb7130ed8a433457af30c9b27.jpeg'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='105' class='pull-right btn btn-default btn-sm'>Unfollow</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>Wilson Lubega</h6>
+                       <font color='#aaa' style='font-size:11px;'> Stastician</font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/106/Matilda N' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/0f8875f3ce4425e818c1c652952e2392d2d3a074.jpeg'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='106' class='pull-right btn btn-default btn-sm'>Unfollow</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>Matilda N</h6>
+                       <font color='#aaa' style='font-size:11px;'> Business</font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/107/News Headlines' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/548dfb82bfe3ee6542352efe85cd4bfe9856e069.jpeg'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='107' class='pull-right btn btn-default btn-sm'>Unfollow</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>News Headlines</h6>
+                       <font color='#aaa' style='font-size:11px;'> News</font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/108/Amital Kiggundu' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/a1e57500e03e7f824588643d2d9293a7c9f8c695.png'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='108' class='pull-right btn btn-default btn-sm'>Unfollow</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>Amital Kiggundu</h6>
+                       <font color='#aaa' style='font-size:11px;'> Business Man</font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/110/m ona' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/5d7a491b2e91db940bca9732476fe9f6b50bd13e.'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='110' class='pull-right btn btn-default btn-sm'>Unfollow</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>m ona</h6>
+                       <font color='#aaa' style='font-size:11px;'> not working </font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/111/Nakanyike Maggie' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/63ae4e6bb505a2913bfd6b6c1061dec422797594.'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='111' class='pull-right btn btn-default btn-sm'>Unfollow</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>Nakanyike Maggie</h6>
+                       <font color='#aaa' style='font-size:11px;'> Business woman</font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/112/Namutesa Susan' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/tatuUser.png'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='112' class='pull-right btn btn-default btn-sm'>Unfollow</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>Namutesa Susan</h6>
+                       <font color='#aaa' style='font-size:11px;'> Environmental Health Specialist</font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/113/Charity Hazel' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/tatuUser.png'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='113' class='pull-right btn btn-default btn-sm'>Unfollow</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>Charity Hazel</h6>
+                       <font color='#aaa' style='font-size:11px;'> not working </font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/114/sandie' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/4c0fddb465bfb6d674745070e0b4ccd96951e0e0.jpeg'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='114' class='pull-right btn btn-default btn-sm'>Unfollow</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>sandie</h6>
+                       <font color='#aaa' style='font-size:11px;'> not working </font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/116/Jose Bintu' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/5fe0a503cdbd49aa0ea8ec05004f28b3d2eee512.jpeg'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='116' class='pull-right btn btn-default btn-sm'>Unfollow</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>Jose Bintu</h6>
+                       <font color='#aaa' style='font-size:11px;'> not working </font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/117/Susan nakasendwa' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/tatuUser.png'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='117' class='pull-right btn btn-default btn-sm'>Unfollow</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>Susan nakasendwa</h6>
+                       <font color='#aaa' style='font-size:11px;'> not working </font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/118/Sharon Mbuga' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/tatuUser.png'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='118' class='pull-right btn btn-default btn-sm'>Unfollow</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>Sharon Mbuga</h6>
+                       <font color='#aaa' style='font-size:11px;'> Social Worker, writer</font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/119/ruan201' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/tatuUser.png'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='119' class='pull-right btn btn-default btn-sm'>Unfollow</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>ruan201</h6>
+                       <font color='#aaa' style='font-size:11px;'> not working </font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/120/Johnson Mangeni' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/tatuUser.png'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='120' class='pull-right btn btn-default btn-sm'>Unfollow</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>Johnson Mangeni</h6>
+                       <font color='#aaa' style='font-size:11px;'> Accountant</font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/121/Yoyoy' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/tatuUser.png'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='121' class='pull-right btn btn-default btn-sm'>Unfollow</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>Yoyoy</h6>
+                       <font color='#aaa' style='font-size:11px;'> not working </font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/124/Bras' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/tatuUser.png'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='124' class='pull-right btn btn-default btn-sm'>Unfollow</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>Bras</h6>
+                       <font color='#aaa' style='font-size:11px;'> not working </font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/125/Samueldasilva' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/tatuUser.png'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='125' class='pull-right btn btn-default btn-sm'>Unfollow</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>Samueldasilva</h6>
+                       <font color='#aaa' style='font-size:11px;'> not working </font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/127/Namaseruka Lucy' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/tatuUser.png'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='127' class='pull-right btn btn-default btn-sm'>Unfollow</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>Namaseruka Lucy</h6>
+                       <font color='#aaa' style='font-size:11px;'> not working </font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/129/fauzia mulangwa' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/tatuUser.png'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='129' class='pull-right btn btn-default btn-sm'>Unfollow</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>fauzia mulangwa</h6>
+                       <font color='#aaa' style='font-size:11px;'> not working </font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/135/Andrei' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/tatuUser.png'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='135' class='pull-right btn btn-default btn-sm'>Unfollow</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>Andrei</h6>
+                       <font color='#aaa' style='font-size:11px;'> not working </font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/139/Sanna' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/tatuUser.png'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='139' class='pull-right btn btn-default btn-sm'>Unfollow</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>Sanna</h6>
+                       <font color='#aaa' style='font-size:11px;'> not working </font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/158/Johan_best' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/tatuUser.png'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='158' class='pull-right btn btn-default btn-sm'>Unfollow</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>Johan_best</h6>
+                       <font color='#aaa' style='font-size:11px;'> not working </font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/159/linus' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/tatuUser.png'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='159' class='pull-right btn btn-default btn-sm'>Unfollow</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>linus</h6>
+                       <font color='#aaa' style='font-size:11px;'> not working </font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/162/SurfingAxiiz' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/tatuUser.png'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='162' class='pull-right btn btn-default btn-sm'>Unfollow</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>SurfingAxiiz</h6>
+                       <font color='#aaa' style='font-size:11px;'> not working </font>
+                    </div>
+                </div> <div class='media'>
+                    <a href='About/index/168/Nilhail' class='pull-left'>
+                        <img class='media-object img img-circle' style='height:40px; width:40px; box-shadow:2px 2px 3px #aaa;' src='images/people/tatuUser.png'/>
+                    </a><a id='unfollow' rel='Connections/unfollow' data-role='168' class='pull-right btn btn-default btn-sm'>Unfollow</a><div class='media-body'>
+                        <h6 class='media-heading' style='margin:0; color:#286090;'>Nilhail</h6>
+                       <font color='#aaa' style='font-size:11px;'> not working </font>
+                    </div>
+                </div>                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer id="footer">
+                Copyright &copy; 2015 Material Admin
+
+                <ul class="f-menu">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">Reports</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </footer>
+        </section>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="js/waves.min.js"></script>
+        <script src="js/bootstrap-growl.min.js"></script>
+        <script src="js/functions.js"></script>
+        <script src="js/actions.js"></script>
+        <script src="js/demo.js"></script>
+        <script src="js/search.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                    $(document).on('mouseover','#unfollow', function(){
+                                $(this).removeClass('btn-default');
+                                $(this).addClass('btn-danger');
+                                $(this).html('unfollow');
+                    });
+                    $(document).on('mouseout','#unfollow', function(){
+                                $(this).removeClass('btn-danger');
+                                $(this).addClass('btn-default');
+                                $(this).html('following');
+                    });
+                    $(document).on('click','#unfollow',function(){
+                        var $this = $(this);
+                        var id = $(this).attr('data-role');
+                        var url = $(this).attr('rel');
+                        $.ajax({
+                            url:url, type:"post", dataType:"text", data:{id:id}, success:function(info){
+                                $this.removeClass('btn-danger');
+                                $this.addClass('btn-primary');
+                                $this.html('follow');
+                                $this.attr('rel','connection/sendRequest');
+                                $this.attr('id','follow');
+                                console.log(info);
+                            }
+                        });
+                    });
+
+                    $(document).on('click','#follow',function(){
+                        var $this = $(this);
+                        var id = $(this).attr('data-role');
+                        var url = $(this).attr('rel');
+                        $.ajax({
+                            url:url, type:"post", dataType:"text", data:{id:id}, success:function(info){
+                                $this.removeClass('btn-primary');
+                                $this.addClass('btn-default');
+                                $this.html('following');
+                                console.log(info);
+                            }
+                        });
+                    });
+
+
+
+
+                });
+        </script>
+    </body>
+</html>

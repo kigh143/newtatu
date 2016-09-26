@@ -1,0 +1,485 @@
+
+ <!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Kigh Ivan's profile page</title>
+        <meta name="description" content="If you are in love with more than one person, then what is inside you is nolonger a heart,its a memory card. Happy monday ba comrades mwenna">
+        <link href="css/animate.min.css" rel="stylesheet">
+        <link href="css/material-design-iconic-font.min.css" rel="stylesheet">
+      <!--   <link href="css/material-design-iconic-font.min.css" rel="stylesheet"> -->
+        <link href="css/jquery.mCustomScrollbar.min.css" rel="stylesheet">        
+        <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+        <link href="css/palette.css" rel="stylesheet">
+        <link href="css/app.min.1.css" rel="stylesheet">
+        <link href="css/app.min.2.css" rel="stylesheet">
+        <link href="css/jquery-ui.css" rel="stylesheet">
+    </head>
+    <body data-ma-header="teal">
+        <header id="header" class="media">
+            <div class="pull-left h-logo">
+                <a href="" class="hidden-xs">
+                    Tatu App
+                </a>
+                <div class="menu-collapse" data-ma-action="sidebar-open" data-ma-target="main-menu">
+                    <div class="mc-wrap">
+                        <div class="mcw-line top palette-White bg"></div>
+                        <div class="mcw-line center palette-White bg"></div>
+                        <div class="mcw-line bottom palette-White bg"></div>
+                    </div>
+                </div>
+            </div>
+
+            <ul class="pull-right h-menu">
+                <li class="hm-search-trigger">
+                    <a href="#" data-ma-action="search-open">
+                        <i class="hm-icon zmdi zmdi-search"></i>
+                    </a>
+                </li>
+                <li class="dropdown hidden-xs">
+                    <a data-toggle="dropdown" href="#"><i class="hm-icon zmdi zmdi-more-vert"></i></a>
+                    <ul class="dropdown-menu dm-icon pull-right">
+                        <li>
+                            <a href="Logout/index"><i class="zmdi zmdi-settings"></i> log out</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="hm-alerts" data-user-alert="sua-messages" data-ma-action="sidebar-open" data-ma-target="user-alerts">
+                    <a href="#"><i class="hm-icon zmdi zmdi-notifications"></i></a>
+                </li>
+                <li class="dropdown hm-profile">
+                    <a href="About/index">
+                        <img id="userPic"  src="images/people/1f272b623fc45812b06f79b4305571376ab8bc9e.jpeg" alt="Kigh Ivan">
+                    </a>
+                </li>
+            </ul>
+
+            <div class="media-body h-search" >
+                <form action="Search/index" id="searcfm" class="p-relative" method="post" accept-charset="utf-8">
+                    <input type="text" class="hs-input" placeholder="Search for people" id='search'/>
+                     <i id='itag' class="zmdi zmdi-search hs-reset" data-ma-action="search-clear"></i>
+                    </form>
+                    </div>
+                <div style='position: relative;'>
+                <div class='col-md-12 col-sm-12 col-xs-12' style='background: #eff; border-radius:3px; display:none; z-index:2050; border:1px solid #ccc; overflow:auto; position: absolute; height:400px;' id='results'>
+                    
+                </div>
+                </div>
+        </header>        <section id="main">
+            <aside id="s-user-alerts" class="sidebar">
+                <ul class="tab-nav tn-justified tn-icon m-t-10" data-tab-color="teal">
+                    <li><a class="sua-messages" href="#sua-messages" data-toggle="tab"><i class="zmdi zmdi-email"></i></a></li>
+                    <li><a class="sua-notifications" href="#sua-notifications" data-toggle="tab"><i class="zmdi zmdi-notifications"></i></a></li>
+                </ul>
+
+                <div class="tab-content">
+                    <div class="tab-pane fade" id="sua-messages">
+                        <ul class="sua-menu list-inline list-unstyled palette-Light-Blue bg">
+                            <li><a href="#" data-ma-action="sidebar-close"><i class="zmdi zmdi-close"></i> Close</a></li>
+                        </ul>
+
+                        <div class="list-group lg-alt c-overflow" id="showNewMessages" >
+                            
+                        </div>
+
+                        <a href="#" class="btn btn-float btn-danger m-btn">
+                            <i class="zmdi zmdi-plus"></i>
+                        </a>
+                    </div>
+                    <div class="tab-pane fade" id="sua-notifications">
+                        <ul class="sua-menu list-inline list-unstyled palette-Orange bg">
+                            <li><a href="#" data-ma-action="sidebar-close"><i class="zmdi zmdi-close"></i> Close</a></li>
+                        </ul>
+                        <!-- div that gets the new notoficaions -->
+                        <div class="list-group lg-alt c-overflow" id="showNotifications">
+                        
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <aside id="s-main-menu" class="sidebar">
+                <div class="smm-header">
+                    <i class="zmdi zmdi-long-arrow-left" data-ma-action="sidebar-close"></i>
+                </div>
+                <ul class="smm-alerts">
+                    <li data-user-alert="sua-messages" data-ma-action="sidebar-open" data-ma-target="user-alerts">
+                        <i class="zmdi zmdi-email"></i>
+                    </li>
+                    <li data-user-alert="sua-notifications" data-ma-action="sidebar-open" data-ma-target="user-alerts">
+                        <i class="zmdi zmdi-notifications"></i>
+                    </li>
+                </ul>
+                <ul class="main-menu">
+                    <li class="sub-menu active">
+                        <ul>
+                            <li><a href="Wall.html"><i class="zmdi zmdi-home m-r-5"></i> Home</a></li>
+                            <li><a href="Profile.html"> <i class="zmdi zmdi-account m-r-5"></i> Profile</a></li>
+                            <li><a href="notification.html"><i class="zmdi zmdi-notifications m-r-5"></i> Notifications</a></li>
+                            <li><a href="messages.html"> <i class="zmdi zmdi-email m-r-5"></i> Messages</a></li>
+                            <li><a href="Contacts/index"> <i class="zmdi  zmdi-local-wc m-r-5"></i> people</a></li>
+                            <li><a href="Help/index"> <i class="zmdi  zmdi-help"></i> Help us improve tatu</a></li>
+                        </ul>
+                    </li>
+                </ul> 
+            </aside>
+            <section id="content">
+                <div class="container">
+                    <div class="c-header">
+                        <h2>Kigh Ivan<small>Programmer </small></h2>
+                    </div>
+
+                    <div class="card" id="profile-main">
+                        <div class="pm-overview c-overflow">
+                            <div class="pmo-pic">
+                                <div class="p-relative">
+                                    <a href="#">
+                                        <img class="img-responsive" src="images/people/1f272b623fc45812b06f79b4305571376ab8bc9e.jpeg" alt="">
+                                    </a>
+
+                                     <div class="dropdown pmop-message">
+                                                                            <center>
+                                            <button class="btn btn-info btn-icon" id="addprofilepic"  data-toggle = "modal" data-target = "#myModal">
+                                                <i class="zmdi zmdi-camera"></i>
+                                            </button>
+                                        </center>
+                                    
+                                    </div>
+
+
+
+                                </div>
+                                <div class="pmo-stat">
+                                    <h2 class="m-0 c-white">66</h2>
+                                    Total Connections
+                                </div>
+                            </div>
+                            <div class="pmo-block pmo-contact hidden-xs">
+                            <h2>Contact</h2>
+                                <ul>
+                                    <li><i class="zmdi zmdi-phone"></i>0705752569</li>
+                                    <li><i class="zmdi zmdi-email"></i>kigh143@gmail.com</li>
+                                    <li>
+                                        <i class="zmdi zmdi-pin"></i>
+                                        <address class="m-b-0 ng-binding">
+                                            bulenga                                        </address>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                        <div class="pm-body clearfix">
+                            <ul class="tab-nav tn-justified">
+                                <li class="active waves-effect"><a href="About/index">About</a></li>
+                                <li class="waves-effect"><a href="Userupdate/index">Your Update</a></li>
+                                <li class="waves-effect"><a href="Connections/index">Connections</a></li>
+                            </ul>
+
+                            <div class="pmb-block">
+
+                            <div class="pmo-block pmo-items hidden-xs" style="padding:0; margin:0;">
+                                <h4>User friends</h4>
+
+                                    <div class="row">
+                                    <marquee>
+                                        <a href='About/index/39/kwizera innocent' class='col-xs-2'>
+                                                            <img class='img-circle' src='images/people/2890ecbb8c4678f33b636b639487e9d8f15efb35.jpeg' alt='kwizera innocent' title='kwizera innocent' style='width:40px;'>
+                                                        </a><a href='About/index/41/Mowzey' class='col-xs-2'>
+                                                            <img class='img-circle' src='images/people/0adfd87194926c962131a5e710a1d08c5f691251.jpeg' alt='Mowzey' title='Mowzey' style='width:40px;'>
+                                                        </a><a href='About/index/64/Ramlah Matovu' class='col-xs-2'>
+                                                            <img class='img-circle' src='images/people/tatuUser.png' alt='Ramlah Matovu' title='Ramlah Matovu' style='width:40px;'>
+                                                        </a><a href='About/index/66/Ritah N' class='col-xs-2'>
+                                                            <img class='img-circle' src='images/people/dream.jpg' alt='Ritah N' title='Ritah N' style='width:40px;'>
+                                                        </a><a href='About/index/68/kibuuka Allan' class='col-xs-2'>
+                                                            <img class='img-circle' src='images/people/computer.png' alt='kibuuka Allan' title='kibuuka Allan' style='width:40px;'>
+                                                        </a><a href='About/index/69/Martin Bossa' class='col-xs-2'>
+                                                            <img class='img-circle' src='images/people/arrow.png' alt='Martin Bossa' title='Martin Bossa' style='width:40px;'>
+                                                        </a><a href='About/index/70/martin hatanga' class='col-xs-2'>
+                                                            <img class='img-circle' src='images/people/Untitled-1.png' alt='martin hatanga' title='martin hatanga' style='width:40px;'>
+                                                        </a><a href='About/index/71/Bbosa Jockins' class='col-xs-2'>
+                                                            <img class='img-circle' src='images/people/tatuUser.png' alt='Bbosa Jockins' title='Bbosa Jockins' style='width:40px;'>
+                                                        </a><a href='About/index/97/Julius Mukasa' class='col-xs-2'>
+                                                            <img class='img-circle' src='images/people/76a74d5413adc0d1cd04d852cb320e5e856b22bf.jpeg' alt='Julius Mukasa' title='Julius Mukasa' style='width:40px;'>
+                                                        </a><a href='About/index/99/Hellen' class='col-xs-2'>
+                                                            <img class='img-circle' src='images/people/168e1666ebeb692145321204180172cb1552fd7b.jpeg' alt='Hellen' title='Hellen' style='width:40px;'>
+                                                        </a><a href='About/index/109/nahabwe brian' class='col-xs-2'>
+                                                            <img class='img-circle' src='images/people/tatuUser.png' alt='nahabwe brian' title='nahabwe brian' style='width:40px;'>
+                                                        </a><a href='About/index/128/Viola Matanda' class='col-xs-2'>
+                                                            <img class='img-circle' src='images/people/tatuUser.png' alt='Viola Matanda' title='Viola Matanda' style='width:40px;'>
+                                                        </a><a href='About/index/130/Nassolo Pauline' class='col-xs-2'>
+                                                            <img class='img-circle' src='images/people/tatuUser.png' alt='Nassolo Pauline' title='Nassolo Pauline' style='width:40px;'>
+                                                        </a><a href='About/index/131/sharn' class='col-xs-2'>
+                                                            <img class='img-circle' src='images/people/tatuUser.png' alt='sharn' title='sharn' style='width:40px;'>
+                                                        </a><a href='About/index/133/Namasembe Teo' class='col-xs-2'>
+                                                            <img class='img-circle' src='images/people/tatuUser.png' alt='Namasembe Teo' title='Namasembe Teo' style='width:40px;'>
+                                                        </a>                                        </marquee>
+                                    </div>
+                            </div>
+                                <div class="pmbb-header">
+                                    <h4><i class="zmdi zmdi-equalizer m-r-5"></i> Favourite Quote</h4>
+                                    <ul class='actions'>
+                                                    <li class='dropdown'>
+                                                        <a href='#' data-toggle='dropdown'>
+                                                            <i class='zmdi zmdi-more-vert'></i>
+                                                        </a>
+
+                                                        <ul class='dropdown-menu dropdown-menu-right'>
+                                                            <li>
+                                                                <a data-pmb-action='edit' href='#'>Edit</a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                    
+                                </div>
+                                <div class="pmbb-body p-l-30">
+                                    <div class="pmbb-view">
+                                        If you are in love with more than one person, then what is inside you is nolonger a heart,its a memory card. Happy monday ba comrades mwenna                                    </div>
+
+                                    <div class="pmbb-edit">
+                                    <!-- <form method="post"> -->
+                                    <form action="about/editUserInfo" id="form_for_aboutme" method="post" accept-charset="utf-8">
+                                        <div class="fg-line">
+                                            <textarea class="form-control" rows="5" placeholder="Summary..." name="aboutme">If you are in love with more than one person, then what is inside you is nolonger a heart,its a memory card. Happy monday ba comrades mwenna</textarea>
+                                        </div>
+                                        <div class="m-t-10">
+                                            <input type="submit" value="save Favourite quote" id="save" class="btn-success btn-sm"/>
+                                        </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="pmb-block">
+                                <div class="pmbb-header">
+                                    <h4><i class="zmdi zmdi-account m-r-5"></i> Basic Information</h4>
+                                    <ul class='actions'>
+                                                    <li class='dropdown'>
+                                                        <a href='#' data-toggle='dropdown'>
+                                                            <i class='zmdi zmdi-more-vert'></i>
+                                                        </a>
+
+                                                        <ul class='dropdown-menu dropdown-menu-right'>
+                                                            <li>
+                                                                <a data-pmb-action='edit' href='#'>Edit</a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>                                </div>
+                                <div class="pmbb-body p-l-30">
+                                    <div class="pmbb-view">
+                                        <dl class="dl-horizontal">
+                                            <dt>Full Name</dt>
+                                            <dd>Kigh Ivan</dd>
+                                        </dl>
+                                        <dl class="dl-horizontal">
+                                            <dt>Gender</dt>
+                                            <dd>Female</dd>
+                                        </dl>
+                                        <dl class="dl-horizontal">
+                                            <dt>Birthday</dt>
+                                            <dd>08/08/2016</dd>
+                                        </dl>
+                                        <dl class="dl-horizontal">
+                                            <dt>Occupation</dt>
+                                            <dd>Programmer</dd>
+                                        </dl>
+                                
+                                    </div>
+
+                                    <div class="pmbb-edit">
+                                        <form action="about/editUserInfo" id="form_for_aboutme" method="post" accept-charset="utf-8">
+                                        <dl class="dl-horizontal">
+                                            <dt class="p-t-10">Full Name</dt>
+                                            <dd>
+                                                <div class="fg-line">
+                                                    <input id='input' type="text" name='name' class="form-control" placeholder="Kigh Ivan">
+                                                </div>
+
+                                            </dd>
+                                        </dl>
+                                        <dl class="dl-horizontal">
+                                            <dt class="p-t-10">Gender</dt>
+                                            <dd>
+                                                <div class="fg-line">
+                                                    <select class="form-control" name='sex'>
+                                                        <option value='Male'>Male</option>
+                                                        <option value='Female'>Female</option>
+                                                    </select>
+                                                </div>
+                                            </dd>
+                                        </dl>
+                                        <dl class="dl-horizontal">
+                                            <dt class="p-t-10">Birthday</dt>
+                                            <dd>
+                                                <div class="dtp-container dropdown fg-line">
+                                                    <input id='bd' type='text' name='birthday' class="form-control date-picker" data-toggle="dropdown" placeholder="Click here...">
+                                                </div>
+                                            </dd>
+                                        </dl>
+                                        
+                                        <dl class="dl-horizontal">
+                                            <dt class="p-t-10">Occupation</dt>
+                                            <dd>
+                                                <div class="dtp-container dropdown fg-line">
+                                                    <input id="in"  type='text' name='Occupation' class="form-control " data-toggle="dropdown" placeholder="Click here...">
+                                                </div>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pmb-block">
+                                <div class="pmbb-header">
+                                    <h4><i class="zmdi zmdi-phone m-r-5"></i> Contact Information</h4>
+
+                                   <ul class='actions'>
+                                                    <li class='dropdown'>
+                                                        <a href='#' data-toggle='dropdown'>
+                                                            <i class='zmdi zmdi-more-vert'></i>
+                                                        </a>
+
+                                                        <ul class='dropdown-menu dropdown-menu-right'>
+                                                            <li>
+                                                                <a data-pmb-action='edit' href='#'>Edit</a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>                                </div>
+                                <div class="pmbb-body p-l-30">
+                                    <div class="pmbb-view">
+                                        <dl class="dl-horizontal">
+                                            <dt>Mobile Phone</dt>
+                                            <dd>0705752569</dd>
+                                        </dl>
+                                        <dl class="dl-horizontal">
+                                            <dt>Email Address</dt>
+                                            <dd>kigh143@gmail.com</dd>
+                                        </dl>
+                                        
+                                    </div>
+
+                                    <div class="pmbb-edit">
+                                      
+                                        <dl class="dl-horizontal">
+                                            <dt class="p-t-10">Email Address</dt>
+                                            <dd>
+                                                <div class="fg-line">
+                                                    <input id="em" type="email" name='email' class="form-control" placeholder="kigh143@gmail.com">
+                                                </div>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+<div style="display:none;left:-10%;background-color:black;color:white;font-weight:bolder;width:300px;text-align:center;z-index:1000;position:absolute;top:400px;" class="well well-small" id="saved">saved successfully</div>
+            <footer id="footer">
+                Copyright &copy; 2016 Tatuapp.com
+            </footer>
+        </section>
+        
+      <!-- the begining of the model for profile pic edit -->
+            <div class = "modal fade" id = "myModal" tabindex = "-1" role = "dialog" aria-labelledby = "myModalLabel" aria-hidden = "true">
+               <div class = "modal-dialog">
+                  <div class = "modal-content">
+                     <div class = "modal-header">
+                        <button type = "button" class = "close" data-dismiss = "modal" aria-hidden = "true">&times;</button>
+                        <h4 class = "modal-title" id = "myModalLabel">Upload profile pic</h4>
+                     </div>
+                     <div class = "modal-body">
+                        <input type="file" id="uploadpic"/>
+                        <div id="bigDiv" style="margin-top:20px; position:relative; ">
+                            <div id="cropbox" style="height:100px; position:absolute; display:none; z-index:10; width:100px; background:rgba(200,200,200,.1); border:2px solid #fff;"></div>
+                            <img id="preview" class="img-responsive" width="100%" />
+                     </div>
+                     <div class = "modal-footer">
+                        <button type = "button" class ="btn btn-primary" id="upload" data-role="About/uploadPic">
+                           Upload image
+                        </button>
+                     </div>
+                     
+                  </div><!-- /.modal-content -->
+               </div><!-- /.modal-dialog -->
+            </div>
+        <!-- end of the code to edit profile pic -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="js/jquery-ui.js"></script>
+        <script src="js/waves.min.js"></script>
+        <script src="js/bootstrap-growl.min.js"></script>
+        <script src="js/moment.min.js"></script>
+        <script src="js/bootstrap-datetimepicker.min.js"></script>
+        <script src="js/functions.js"></script>
+        <script src="js/actions.js"></script>
+        <script src="js/demo.js"></script>
+        <script src="js/edit.js"></script>
+        <script src="js/search.js"></script>
+        <script src="js/getNotifications.js"></script>
+         <script src="js/touchpad.js"></script>
+      
+     <script type="text/javascript">
+                var temp;
+                var type, name, size;
+                $("#uploadpic").on("change", function (){
+                    var reader = new FileReader();
+                    reader.onload = function(e){
+                    temp = e.target.result;
+                    $("#preview").attr("src",temp);
+                     imgWidth = $('#preview').width();
+                     imgHeight = $('#preview').height();
+                }
+                reader.readAsDataURL(this.files[0]);
+                $("#cropbox").show();
+                type = this.files[0]['type'];
+                name = this.files[0]['name'];
+                size = this.files[0]['size'];
+               });
+
+                $("#cropbox").draggable({containment: "#preview"});
+                $("#cropbox").resizable({aspectRatio:1,containment:"#preview"});
+
+                $("#upload").click(function(){
+                    $("#upload").html('Image Uploading...please wait').attr('disabled','disabled');
+                    var x = $("#cropbox").position().left;
+                    var y = $("#cropbox").position().top;
+                    var height = $("#cropbox").height();
+                    var width = $("#cropbox").width();
+                    $.ajax({
+                        url:$(this).attr("data-role"),
+                        type:"Post",
+                        data:{y:y, x:x, height:height, width:width, nwidth:imgWidth, nheight:imgHeight, temp:temp, type:type, name:name, size:size},
+                        success:function(data){
+                            window.location ="About/index";
+                        }
+                    });
+
+                });
+        </script>
+        <script type="text/javascript">
+           var $followUser =  $("#followUser");
+           $followUser.on("click", function(){
+                var person_id = $followUser.attr("rel");
+                var url= $followUser.attr("data-role");
+                $.ajax({
+                    url:url,
+                    type:"post",
+                    dataType:"text",
+                    data:{persion_id:person_id},
+                    success : function(data) {
+                        if(data === "following"){
+                            $followUser.removeClass("btn btn-info");
+                            $followUser.addClass("btn btn-success").html("following").addClass("animated bounceOutUp");  
+                        }
+                    } 
+                });
+           });
+        </script>
+    </body>
+</html>

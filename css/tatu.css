@@ -1,0 +1,151 @@
+/* fallback */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Material Icons'), local('MaterialIcons-Regular'), url(../fonts/tatu.woff2) format('woff2');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+
+#commentText{
+  padding:10px;
+  border-radius:2px;
+  border:1px solid #ddd;
+  margin:15px 0px 10px;
+  color:#888;
+}
+
+#commentOn{
+  display:none;
+  margin-bottom:10px;
+}
+
+#viewMore{
+  cursor:pointer;
+}
+
+
+
+/*message controller css */
+#personId{
+  border-radius:0px; border-right:none; border-left:none; padding:7px; border-bottom:1px solid #f1f1f1; border-top:1px solid #f1f1f1;
+}
+#img-circle{
+width:40px; margin-right:5px; height: 40px; float:left;
+}
+#personId_h5{
+  color:teal;
+}
+#personId-h5-i{
+  color:#aaa; font-size:12px;
+}
+#personId-span{
+  float:right;
+}
+
+/* messafges ccss */
+#receiver{
+  clear: both; padding:0px; margin-bottom: 0px;
+}
+
+#reciever-2:before{
+content:""; 
+position: absolute; 
+top: 10px; 
+width: 0; 
+z-index: 0;
+left:-12px;
+height: 0; 
+border-top: 9px solid transparent; 
+border-right: 14px solid #ccc; 
+border-bottom: 1px solid transparent;
+}
+
+
+#loggedUser-2:before{
+content:""; 
+position: absolute; 
+top: 10px; 
+z-index: 0;
+right:-15px;
+width:0px;
+border-top: 9px solid transparent !important; 
+border-left: 14px solid #ccc !important; 
+border-bottom: 0px solid transparent !important;
+}
+
+#receiver-1{
+  padding: 0px; border:none; margin-bottom:10px;
+}
+#reciever-2 #close{
+  position:absolute;
+  border-top-right-radius: 2px;
+  border-bottom-left-radius: 50%;
+  background:#eee;
+  padding:0px 5px 0px;
+  top:0;
+  display:none;
+  right:0;
+  color:#aaa;
+  cursor: pointer;
+  font-weight: bold;
+}
+#loggedUser-2 #close{
+  position:absolute;
+  border-top-left-radius: 2px;
+  border-bottom-right-radius: 50%;
+  background:#aaa;
+  padding:0px 5px 0px;
+  top:0;
+  display:none;
+  left:0;
+  color:#fff;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+
+#reciever-2{
+  padding: 7px; margin: 0px; background:#ccc; position:relative; border:1px solid #bbb; box-shadow: -1px 1px 2px #ccc;
+}
+#h5-font{
+  float: right; font-size: 12px; color:#999;
+}
+#LoogedUser{
+  clear: both;
+  width:96%;
+}
+#loggedUser-1{
+  padding: 0px; margin-bottom:10px; 
+}
+#loggedUser-2{
+  padding: 7px; margin: 0px; background:#f2f2f2; position:relative; box-shadow: 1px 1px 2px #ccc;
+}
+#loggedUser-font{
+  float: right; font-size: 12px; color:#999;
+}
+/*message controller css */
+.error{ border: 1px dotted red !important; } 
+
+@media (max-width: 767px) {
+  #result {
+      margin-top:100px;
+  }
+}
+

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Welcome to tatu</title>
+        <!-- Vendor CSS -->
+        <link href="css/animate.min.css" rel="stylesheet">
+       <!-- <link href="css/material-design-iconic-font.min.css" rel="stylesheet">-->
+        <link href="css/material-design-iconic-font.min.css" rel="stylesheet"> 
+        <link href="css/lightgallery.min.css" rel="stylesheet">
+        <link href="css/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+        <link href="css/palette.css" rel="stylesheet">
+        <!-- CSS -->
+        <link href="css/app.min.1.css" rel="stylesheet">
+        <link href="css/app.min.2.css" rel="stylesheet">
+    </head>
+
+    <body data-ma-header="teal">
+         <header id="header" class="media">
+            <div class="pull-left h-logo">
+                <a href="" class="hidden-xs">
+                    Tatu App
+                </a>
+                <div class="menu-collapse" data-ma-action="sidebar-open" data-ma-target="main-menu">
+                    <div class="mc-wrap">
+                        <div class="mcw-line top palette-White bg"></div>
+                        <div class="mcw-line center palette-White bg"></div>
+                        <div class="mcw-line bottom palette-White bg"></div>
+                    </div>
+                </div>
+            </div>
+
+            <ul class="pull-right h-menu">
+                <li class="hm-search-trigger">
+                    <a href="#" data-ma-action="search-open">
+                        <i class="hm-icon zmdi zmdi-search"></i>
+                    </a>
+                </li>
+                <li class="dropdown hidden-xs">
+                    <a data-toggle="dropdown" href="#"><i class="hm-icon zmdi zmdi-more-vert"></i></a>
+                    <ul class="dropdown-menu dm-icon pull-right">
+                        <li>
+                            <a href="Logout/index"><i class="zmdi zmdi-settings"></i> log out</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="hm-alerts" data-user-alert="sua-messages" data-ma-action="sidebar-open" data-ma-target="user-alerts">
+                    <a href="#"><i class="hm-icon zmdi zmdi-notifications"></i></a>
+                </li>
+                <li class="dropdown hm-profile">
+                    <a href="Profile.html">
+                        <img id="userPic"  src="images/people/1f272b623fc45812b06f79b4305571376ab8bc9e.jpeg" alt="Kigh Ivan">
+                    </a>
+                </li>
+            </ul>
+
+            <div class="media-body h-search" >
+                <form action="Search/index" id="searcfm" class="p-relative" method="post" accept-charset="utf-8">
+                    <input type="text" class="hs-input" placeholder="Search for people" id='search'/>
+                     <i id='itag' class="zmdi zmdi-search hs-reset" data-ma-action="search-clear"></i>
+                    </form>
+                    </div>
+                <div style='position: relative;'>
+                <div class='col-md-12 col-sm-12 col-xs-12' style='background: #eff; border-radius:3px; display:none; z-index:2050; border:1px solid #ccc; overflow:auto; position: absolute; height:400px;' id='results'>
+                    
+                </div>
+                </div>
+        </header>
+        <section id="main">
+           <aside id="s-user-alerts" class="sidebar">
+                <ul class="tab-nav tn-justified tn-icon m-t-10" data-tab-color="teal">
+                    <li><a class="sua-messages" href="#sua-messages" data-toggle="tab"><i class="zmdi zmdi-email"></i></a></li>
+                    <li><a class="sua-notifications" href="#sua-notifications" data-toggle="tab"><i class="zmdi zmdi-notifications"></i></a></li>
+                </ul>
+
+                <div class="tab-content">
+                    <div class="tab-pane fade" id="sua-messages">
+                        <ul class="sua-menu list-inline list-unstyled palette-Light-Blue bg">
+                            <li><a href="#" data-ma-action="sidebar-close"><i class="zmdi zmdi-close"></i> Close</a></li>
+                        </ul>
+
+                        <div class="list-group lg-alt c-overflow" id="showNewMessages" >
+                            
+                        </div>
+
+                        <a href="#" class="btn btn-float btn-danger m-btn">
+                            <i class="zmdi zmdi-plus"></i>
+                        </a>
+                    </div>
+                    <div class="tab-pane fade" id="sua-notifications">
+                        <ul class="sua-menu list-inline list-unstyled palette-Orange bg">
+                            <li><a href="#" data-ma-action="sidebar-close"><i class="zmdi zmdi-close"></i> Close</a></li>
+                        </ul>
+                        <!-- div that gets the new notoficaions -->
+                        <div class="list-group lg-alt c-overflow" id="showNotifications">
+                        
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <aside id="s-main-menu" class="sidebar">
+                <div class="smm-header">
+                    <i class="zmdi zmdi-long-arrow-left" data-ma-action="sidebar-close"></i>
+                </div>
+                <ul class="smm-alerts">
+                    <li data-user-alert="sua-messages" data-ma-action="sidebar-open" data-ma-target="user-alerts">
+                        <i class="zmdi zmdi-email"></i>
+                    </li>
+                    <li data-user-alert="sua-notifications" data-ma-action="sidebar-open" data-ma-target="user-alerts">
+                        <i class="zmdi zmdi-notifications"></i>
+                    </li>
+                </ul>
+                <ul class="main-menu">
+                    <li class="sub-menu active">
+                        <ul>
+                            <li><a href="Wall.html"><i class="zmdi zmdi-home m-r-5"></i> Home</a></li>
+                            <li><a href="Profile.html"> <i class="zmdi zmdi-account m-r-5"></i> Profile</a></li>
+                            <li><a href="notification.html"><i class="zmdi zmdi-notifications m-r-5"></i> Notifications</a></li>
+                            <li><a href="messages.html"> <i class="zmdi zmdi-email m-r-5"></i> Messages</a></li>
+                            <li><a href="Contacts/index"> <i class="zmdi  zmdi-local-wc m-r-5"></i> people</a></li>
+                            <li><a href="Help/index"> <i class="zmdi  zmdi-help"></i> Help us improve tatu</a></li>
+                        </ul>
+                    </li>
+                </ul> 
+            </aside>
+        
+            <section id="content">
+                <div class="c-header">
+                     <h2>Your update</h2>
+                 </div>
+
+                <div class="card">
+                    <div class="action-header clearfix palette-Teal-400 bg">
+                        <div class="ah-label hidden-xs palette-White text">Your update hase recieved [4] interactions with 1 likes  and 3 comments </div>
+
+                        <div class="ah-search">
+                            <input type="text" placeholder="Start typing..." class="ahs-input">
+
+                            <i class="ah-search-close zmdi zmdi-long-arrow-left" data-ma-action="ah-search-close"></i>
+                        </div>
+                    </div>
+
+                    <div class="card-body card-padding">
+                                             <div class="rows">
+                            <div class="col-md-5">
+                                       <div class='thumbnail'><img src='images/posts/90b5e171d84ed3cf4e4ed1af5fd99cb6.jpg'/></div><div class='caption'>And every story ends
+But we could still pretend
+Every single moment will be just as we had planned
+It was some type of love
+That's some type of love
+
+Read more: Charlie Puth - Some Type Of Love Lyrics | MetroLyrics </div><br/></div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="list-group lg-alt">
+                                      <a href="#" class="list-group-item media">
+                                                    <div class="pull-left">
+                                                        <img class="avatar-img mCS_img_loaded" src="images/people/1f272b623fc45812b06f79b4305571376ab8bc9e.jpeg" alt="">
+                                                    </div>
+
+                                                    <div class="media-body">
+                                                        <div class="lgi-heading">Kigh Ivan</div>
+                                                        <small class="lgi-text">
+                                                        hey
+                                                        </small>
+                                                    </div>
+                                                </a> <a href="#" class="list-group-item media">
+                                                    <div class="pull-left">
+                                                        <img class="avatar-img mCS_img_loaded" src="images/people/1f272b623fc45812b06f79b4305571376ab8bc9e.jpeg" alt="">
+                                                    </div>
+
+                                                    <div class="media-body">
+                                                        <div class="lgi-heading">Kigh Ivan</div>
+                                                        <small class="lgi-text">
+                                                        . Our lives are nothing but a cosmic blink. Even our seemingly all-encompassing world is just tiny blue dot circling an average sized star spiraling around a galaxy of 200-400 billion stars, which itself is just one galaxy among billions more. Yet for one brief
+                                                        </small>
+                                                    </div>
+                                                </a> <a href="#" class="list-group-item media">
+                                                    <div class="pull-left">
+                                                        <img class="avatar-img mCS_img_loaded" src="images/people/0adfd87194926c962131a5e710a1d08c5f691251.jpeg" alt="">
+                                                    </div>
+
+                                                    <div class="media-body">
+                                                        <div class="lgi-heading">Mowzey</div>
+                                                        <small class="lgi-text">
+                                                        average sized star spiraling around a galaxy of 200-400 billion stars, which itself is just one galaxy among billions more. Yet for one brief.
+                                                        </small>
+                                                    </div>
+                                                </a>                                </div>
+                            </div>
+                            <div class="col-md-1">
+                                <ul>
+                                                                    </ul>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                                            </div>
+                </div>
+            </section>
+
+            <footer id="footer">
+                Copyright &copy; 2015 Tatuapp.com
+
+                
+            </footer>
+        </section>
+
+        <!-- Page Loader -->
+        <div class="page-loader palette-Teal bg">
+            <div class="preloader pl-xl pls-white">
+                <svg class="pl-circular" viewBox="25 25 50 50">
+                    <circle class="plc-path" cx="50" cy="50" r="20"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Older IE warning message -->
+        <!--[if lt IE 9]>
+            <div class="ie-warning">
+                <h1 class="c-white">Warning!!</h1>
+                <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
+                <div class="iew-container">
+                    <ul class="iew-download">
+                        <li>
+                            <a href="http://www.google.com/chrome/">
+                                <img src="img/browsers/chrome.png" alt="">
+                                <div>Chrome</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.mozilla.org/en-US/firefox/new/">
+                                <img src="img/browsers/firefox.png" alt="">
+                                <div>Firefox</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.opera.com">
+                                <img src="img/browsers/opera.png" alt="">
+                                <div>Opera</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.apple.com/safari/">
+                                <img src="img/browsers/safari.png" alt="">
+                                <div>Safari</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                                <img src="img/browsers/ie.png" alt="">
+                                <div>IE (New)</div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <p>Sorry for the inconvenience!</p>
+            </div>   
+        <![endif]-->
+    
+    
+        <!-- Javascript Libraries -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        
+        <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="js/waves.min.js"></script>
+        <script src="js/bootstrap-growl.min.js"></script>
+        <script src="js/lightgallery-all.min.js"></script>
+        
+        <!-- Placeholder for IE9 -->
+        <!--[if IE 9 ]>
+            <script src="vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
+        <![endif]-->
+        
+        <script src="js/functions.js"></script>
+        <script src="js/actions.js"></script>
+        <script src="js/demo.js"></script>
+        <script src="js/search.js"></script>
+    </body>
+
+<!-- Mirrored from byrushan.com/projects/mae/1-0/photos.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 13 Jul 2016 14:36:31 GMT -->
+</html>

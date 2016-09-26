@@ -1,0 +1,935 @@
+
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kigh Ivan - home tatuapp.com</title>
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/material-design-iconic-font.min.css" rel="stylesheet">
+    <!-- <link href="css/material-design-iconic-font.min.css" rel="stylesheet"> -->
+    <link href="css/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+    <link href="css/lightgallery.min.css" rel="stylesheet">
+    <link href="css/palette.css" rel="stylesheet">
+    <link href="css/app.min.1.css" rel="stylesheet">
+    <link href="css/app.min.2.css" rel="stylesheet">
+    <link href="css/tatu.css" rel="stylesheet">
+</head>
+    <body data-ma-header="teal">
+     <header id="header" class="media">
+            <div class="pull-left h-logo">
+                <a href="" class="hidden-xs">
+                    Tatu App
+                </a>
+                <div class="menu-collapse" data-ma-action="sidebar-open" data-ma-target="main-menu">
+                    <div class="mc-wrap">
+                        <div class="mcw-line top palette-White bg"></div>
+                        <div class="mcw-line center palette-White bg"></div>
+                        <div class="mcw-line bottom palette-White bg"></div>
+                    </div>
+                </div>
+            </div>
+
+            <ul class="pull-right h-menu">
+                <li class="hm-search-trigger">
+                    <a href="#" data-ma-action="search-open">
+                        <i class="hm-icon zmdi zmdi-search"></i>
+                    </a>
+                </li>
+                <li class="dropdown hidden-xs">
+                    <a data-toggle="dropdown" href="#"><i class="hm-icon zmdi zmdi-more-vert"></i></a>
+                    <ul class="dropdown-menu dm-icon pull-right">
+                        <li>
+                            <a href="Logout/index"><i class="zmdi zmdi-settings"></i> log out</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="hm-alerts" data-user-alert="sua-messages" data-ma-action="sidebar-open" data-ma-target="user-alerts">
+                    <a href="#"><i class="hm-icon zmdi zmdi-notifications"></i></a>
+                </li>
+                <li class="dropdown hm-profile">
+                    <a href="About/index">
+                        <img id="userPic"  src="images/people/1f272b623fc45812b06f79b4305571376ab8bc9e.jpeg" alt="Kigh Ivan">
+                    </a>
+                </li>
+            </ul>
+
+            <div class="media-body h-search" >
+                <form action="Search/index" id="searcfm" class="p-relative" method="post" accept-charset="utf-8">
+                    <input type="text" class="hs-input" placeholder="Search for people" id='search'/>
+                     <i id='itag' class="zmdi zmdi-search hs-reset" data-ma-action="search-clear"></i>
+                    </form>
+                    </div>
+                <div style='position: relative;'>
+                <div class='col-md-12 col-sm-12 col-xs-12' style='background: #eff; border-radius:3px; display:none; z-index:2050; border:1px solid #ccc; overflow:auto; position: absolute; height:400px;' id='results'>
+                    
+                </div>
+                </div>
+        </header>        <section id="main">
+           <aside id="s-user-alerts" class="sidebar">
+                <ul class="tab-nav tn-justified tn-icon m-t-10" data-tab-color="teal">
+                    <li><a class="sua-messages" href="#sua-messages" data-toggle="tab"><i class="zmdi zmdi-email"></i></a></li>
+                    <li><a class="sua-notifications" href="#sua-notifications" data-toggle="tab"><i class="zmdi zmdi-notifications"></i></a></li>
+                </ul>
+
+                <div class="tab-content">
+                    <div class="tab-pane fade" id="sua-messages">
+                        <ul class="sua-menu list-inline list-unstyled palette-Light-Blue bg">
+                            <li><a href="#" data-ma-action="sidebar-close"><i class="zmdi zmdi-close"></i> Close</a></li>
+                        </ul>
+
+                        <div class="list-group lg-alt c-overflow" id="showNewMessages" >
+                            
+                        </div>
+
+                        <a href="#" class="btn btn-float btn-danger m-btn">
+                            <i class="zmdi zmdi-plus"></i>
+                        </a>
+                    </div>
+                    <div class="tab-pane fade" id="sua-notifications">
+                        <ul class="sua-menu list-inline list-unstyled palette-Orange bg">
+                            <li><a href="#" data-ma-action="sidebar-close"><i class="zmdi zmdi-close"></i> Close</a></li>
+                        </ul>
+                        <!-- div that gets the new notoficaions -->
+                        <div class="list-group lg-alt c-overflow" id="showNotifications">
+                        
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <aside id="s-main-menu" class="sidebar">
+                <div class="smm-header">
+                    <i class="zmdi zmdi-long-arrow-left" data-ma-action="sidebar-close"></i>
+                </div>
+                <ul class="smm-alerts">
+                    <li data-user-alert="sua-messages" data-ma-action="sidebar-open" data-ma-target="user-alerts">
+                        <i class="zmdi zmdi-email"></i>
+                    </li>
+                    <li data-user-alert="sua-notifications" data-ma-action="sidebar-open" data-ma-target="user-alerts">
+                        <i class="zmdi zmdi-notifications"></i>
+                    </li>
+                </ul>
+                <ul class="main-menu">
+                    <li class="sub-menu active">
+                        <ul>
+                            <li><a href="Wall.html"><i class="zmdi zmdi-home m-r-5"></i> Home</a></li>
+                            <li><a href="profile.html"> <i class="zmdi zmdi-account m-r-5"></i> Profile</a></li>
+                            <li><a href="notification.html"><i class="zmdi zmdi-notifications m-r-5"></i> Notifications</a></li>
+                            <li><a href="messages.html"> <i class="zmdi zmdi-email m-r-5"></i> Messages</a></li>
+                            <li><a href="Contacts/index"> <i class="zmdi  zmdi-local-wc m-r-5"></i> people</a></li>
+                            <li><a href="Help/index"> <i class="zmdi  zmdi-help"></i> Help us improve tatu</a></li>
+                        </ul>
+                    </li>
+                </ul> 
+            </aside>
+
+            <section id="content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="card wall-posting">
+                                <div class="card-body card-padding">
+                                <form action="wall/createUpdate" id="updateForm" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+                                    <textarea class="wp-text" name="updateText" data-auto-size placeholder="Write Something..." id="userpost"></textarea>
+                                    <div class="tab-content p-0">
+                                        <div class="wp-media tab-pane" id="wpm-image">
+                                            <input type="file" name="userfile[]" id="imagesUpload" multiple="multiple" class="form-control" />
+                                        </div>
+                                        <div id="showupload">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <ul class="list-unstyled clearfix wpb-actions">
+                                    <li class="wpba-attrs">
+                                        <ul class="list-unstyled list-inline">
+                                            <li><a data-wpba="image" data-toggle="tab" href="#" data-target="#wpm-image"><i class="zmdi zmdi-image"></i></a></li>
+                                        </ul>
+                                    </li>
+                                    <button  type="submit" class="btn btn-primary btn-sm btn-icon" id="submit_btn"><i class="zmdi zmdi-check"></i></button>
+
+                                </ul>
+                                </form>                            </div>
+                            <!-- upsates start from here  -->
+                                <div class="card">
+                        <div class="card-header">
+                            <div class="media">
+                                <div class="pull-left">
+                                    <img class="avatar-img a-lg" src="images/people/1f272b623fc45812b06f79b4305571376ab8bc9e.jpeg" alt="">
+                                </div>
+                                <div class="media-body m-t-5">
+                                    <h2>Kigh Ivan<small>Posted on 2016-08-14 19:31:56</small></h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body card-padding">
+                            <p>And every story ends
+But we could still pretend
+Every single moment will be just as we had planned
+It was some type of love
+That's some type of love
+
+Read more: Charlie Puth - Some Type Of Love Lyrics | MetroLyrics </p><div class="wall-img-preview lightbox clearfix"><div class="wip-item" data-src="images/posts/90b5e171d84ed3cf4e4ed1af5fd99cb6.jpg" style="background-image: url(images/posts/90b5e171d84ed3cf4e4ed1af5fd99cb6.jpg);">
+                            <img src="images/posts/90b5e171d84ed3cf4e4ed1af5fd99cb6.jpg" alt="">
+                         </div></div><ul class="wall-attrs clearfix list-inline list-unstyled">
+                                <li class="wa-stats">
+                                <span><i class="zmdi zmdi-comments"></i>3</span><span id="dislikeBtn" class="active" data-role="28"><i class="zmdi zmdi-favorite"></i><span>
+                                	1
+                                	</span></span></li>
+                                <li class="wa-users"><a href="About/index/36/Kigh Ivan"><img src="images/people/1f272b623fc45812b06f79b4305571376ab8bc9e.jpeg" title="Kigh Ivan"></a></li>
+                            </ul>
+                        </div>
+                        <div class="wall-comment-list" style="margin-top:3px !important;">
+						<div class="wcl-list" id="commentsHere"><div class="media">
+	                    <a href="#" class="pull-left">
+	                        <img src="images/people/1f272b623fc45812b06f79b4305571376ab8bc9e.jpeg" alt="" class="avatar-img">
+	                    </a>
+	                    <div class="media-body">
+	                        <a href="About/index/36/Kigh Ivan" class="a-title">Kigh Ivan</a> <small class="c-gray m-l-10">2016-09-02 09:24:05</small>
+	                        <p class="m-t-5 m-b-0">hey.</p>
+	                    </div>
+	                </div><div class="media">
+	                    <a href="#" class="pull-left">
+	                        <img src="images/people/1f272b623fc45812b06f79b4305571376ab8bc9e.jpeg" alt="" class="avatar-img">
+	                    </a>
+	                    <div class="media-body">
+	                        <a href="About/index/36/Kigh Ivan" class="a-title">Kigh Ivan</a> <small class="c-gray m-l-10">2016-09-08 07:15:59</small>
+	                        <p class="m-t-5 m-b-0">. Our lives are nothing but a cosmic blink. Even our seemingly all-encompassing world is just tiny blue dot circling an average sized star spiraling around a galaxy of 200-400 billion stars, which itself is just one galaxy among billions more. Yet for one brief.</p>
+	                    </div>
+	                </div></div><h6><i><a href="#" data-role="28" id="viewMore" data-toggle="modal" data-target="#myModal" >
+								View all comments on this update</a></i></h6><textarea  placeholder="type comment...." id="commentText"  class="form-control" rows="2"></textarea>
+						<button id="commentOn" data-role="28"class="btn btn-primary btn-sm btn-icon waves-effect waves-circle waves-float"><i class="zmdi zmdi-mail-send"></i>
+						</button>
+						<br style="clear:both;"/></div></div><div class="card">
+                        <div class="card-header">
+                            <div class="media">
+                                <div class="pull-left">
+                                    <img class="avatar-img a-lg" src="images/people/548dfb82bfe3ee6542352efe85cd4bfe9856e069.jpeg" alt="">
+                                </div>
+                                <div class="media-body m-t-5">
+                                    <h2>News Headlines<small>Posted on 2016-08-08 03:34:23</small></h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body card-padding">
+                            <p></p><div class="wall-img-preview lightbox clearfix"><div class="wip-item" data-src="images/posts/0b259bb7e5b8281ba7bbfaed7dcc373a.jpg" style="background-image: url(images/posts/0b259bb7e5b8281ba7bbfaed7dcc373a.jpg);">
+                            <img src="images/posts/0b259bb7e5b8281ba7bbfaed7dcc373a.jpg" alt="">
+                         </div></div><ul class="wall-attrs clearfix list-inline list-unstyled">
+                                <li class="wa-stats">
+                                <span><i class="zmdi zmdi-comments"></i>0</span><span id="dislikeBtn" class="active" data-role="70"><i class="zmdi zmdi-favorite"></i><span>
+                                	3
+                                	</span></span></li>
+                                <li class="wa-users"><a href="About/index/36/Kigh Ivan"><img src="images/people/1f272b623fc45812b06f79b4305571376ab8bc9e.jpeg" title="Kigh Ivan"></a><a href="About/index/37/Mukasa Keny"><img src="images/people/18759473bb1e290994395553f71b5a9c5ad67e42.jpeg" title="Mukasa Keny"></a><a href="About/index/107/News Headlines"><img src="images/people/548dfb82bfe3ee6542352efe85cd4bfe9856e069.jpeg" title="News Headlines"></a></li>
+                            </ul>
+                        </div>
+                        <div class="wall-comment-list" style="margin-top:3px !important;">
+						<div class="wcl-list" id="commentsHere"></div><textarea  placeholder="type comment...." id="commentText"  class="form-control" rows="2"></textarea>
+						<button id="commentOn" data-role="70"class="btn btn-primary btn-sm btn-icon waves-effect waves-circle waves-float"><i class="zmdi zmdi-mail-send"></i>
+						</button>
+						<br style="clear:both;"/></div></div><div class="card">
+                        <div class="card-header">
+                            <div class="media">
+                                <div class="pull-left">
+                                    <img class="avatar-img a-lg" src="images/people/tatuUser.png" alt="">
+                                </div>
+                                <div class="media-body m-t-5">
+                                    <h2>Namaseruka Lucy<small>Posted on 2016-08-05 03:25:53</small></h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body card-padding">
+                            <p>wooow</p><ul class="wall-attrs clearfix list-inline list-unstyled">
+                                <li class="wa-stats">
+                                <span><i class="zmdi zmdi-comments"></i>2</span><span id="dislikeBtn" class="active" data-role="88"><i class="zmdi zmdi-favorite"></i><span>
+                                	1
+                                	</span></span></li>
+                                <li class="wa-users"><a href="About/index/36/Kigh Ivan"><img src="images/people/1f272b623fc45812b06f79b4305571376ab8bc9e.jpeg" title="Kigh Ivan"></a></li>
+                            </ul>
+                        </div>
+                        <div class="wall-comment-list" style="margin-top:3px !important;">
+						<div class="wcl-list" id="commentsHere"><div class="media">
+	                    <a href="#" class="pull-left">
+	                        <img src="images/people/1f272b623fc45812b06f79b4305571376ab8bc9e.jpeg" alt="" class="avatar-img">
+	                    </a>
+	                    <div class="media-body">
+	                        <a href="About/index/36/Kigh Ivan" class="a-title">Kigh Ivan</a> <small class="c-gray m-l-10">2016-08-10 01:55:13</small>
+	                        <p class="m-t-5 m-b-0">Jey.</p>
+	                    </div>
+	                </div><div class="media">
+	                    <a href="#" class="pull-left">
+	                        <img src="images/people/1f272b623fc45812b06f79b4305571376ab8bc9e.jpeg" alt="" class="avatar-img">
+	                    </a>
+	                    <div class="media-body">
+	                        <a href="About/index/36/Kigh Ivan" class="a-title">Kigh Ivan</a> <small class="c-gray m-l-10">2016-08-17 06:20:53</small>
+	                        <p class="m-t-5 m-b-0">yo
+.</p>
+	                    </div>
+	                </div></div><textarea  placeholder="type comment...." id="commentText"  class="form-control" rows="2"></textarea>
+						<button id="commentOn" data-role="88"class="btn btn-primary btn-sm btn-icon waves-effect waves-circle waves-float"><i class="zmdi zmdi-mail-send"></i>
+						</button>
+						<br style="clear:both;"/></div></div><div class="card">
+                        <div class="card-header">
+                            <div class="media">
+                                <div class="pull-left">
+                                    <img class="avatar-img a-lg" src="images/people/2890ecbb8c4678f33b636b639487e9d8f15efb35.jpeg" alt="">
+                                </div>
+                                <div class="media-body m-t-5">
+                                    <h2>kwizera innocent<small>Posted on 2016-07-31 16:20:56</small></h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body card-padding">
+                            <p></p><div class="wall-img-preview lightbox clearfix"><div class="wip-item" data-src="images/posts/ad7bf081e404be3d5ce8f5d7b2cdf9d0.jpg" style="background-image: url(images/posts/ad7bf081e404be3d5ce8f5d7b2cdf9d0.jpg);">
+                            <img src="images/posts/ad7bf081e404be3d5ce8f5d7b2cdf9d0.jpg" alt="">
+                         </div></div><ul class="wall-attrs clearfix list-inline list-unstyled">
+                                <li class="wa-stats">
+                                <span><i class="zmdi zmdi-comments"></i>1</span><span id="dislikeBtn" class="active" data-role="27"><i class="zmdi zmdi-favorite"></i><span>
+                                	4
+                                	</span></span></li>
+                                <li class="wa-users"><a href="About/index/36/Kigh Ivan"><img src="images/people/1f272b623fc45812b06f79b4305571376ab8bc9e.jpeg" title="Kigh Ivan"></a><a href="About/index/37/Mukasa Keny"><img src="images/people/18759473bb1e290994395553f71b5a9c5ad67e42.jpeg" title="Mukasa Keny"></a><a href="About/index/39/kwizera innocent"><img src="images/people/2890ecbb8c4678f33b636b639487e9d8f15efb35.jpeg" title="kwizera innocent"></a><a href="About/index/41/Mowzey"><img src="images/people/0adfd87194926c962131a5e710a1d08c5f691251.jpeg" title="Mowzey"></a></li>
+                            </ul>
+                        </div>
+                        <div class="wall-comment-list" style="margin-top:3px !important;">
+						<div class="wcl-list" id="commentsHere"><div class="media">
+	                    <a href="#" class="pull-left">
+	                        <img src="images/people/18759473bb1e290994395553f71b5a9c5ad67e42.jpeg" alt="" class="avatar-img">
+	                    </a>
+	                    <div class="media-body">
+	                        <a href="About/index/37/Mukasa Keny" class="a-title">Mukasa Keny</a> <small class="c-gray m-l-10">2016-08-06 12:40:35</small>
+	                        <p class="m-t-5 m-b-0">the shadow ... is different .</p>
+	                    </div>
+	                </div></div><textarea  placeholder="type comment...." id="commentText"  class="form-control" rows="2"></textarea>
+						<button id="commentOn" data-role="27"class="btn btn-primary btn-sm btn-icon waves-effect waves-circle waves-float"><i class="zmdi zmdi-mail-send"></i>
+						</button>
+						<br style="clear:both;"/></div></div><div class="card">
+                        <div class="card-header">
+                            <div class="media">
+                                <div class="pull-left">
+                                    <img class="avatar-img a-lg" src="images/people/tatuUser.png" alt="">
+                                </div>
+                                <div class="media-body m-t-5">
+                                    <h2>Johnson Mangeni<small>Posted on 2016-07-28 05:38:30</small></h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body card-padding">
+                            <p>Hey guys are you there?
+
+</p><ul class="wall-attrs clearfix list-inline list-unstyled">
+                                <li class="wa-stats">
+                                <span><i class="zmdi zmdi-comments"></i>0</span><span id="dislikeBtn" class="active" data-role="83"><i class="zmdi zmdi-favorite"></i><span>
+                                	1
+                                	</span></span></li>
+                                <li class="wa-users"><a href="About/index/36/Kigh Ivan"><img src="images/people/1f272b623fc45812b06f79b4305571376ab8bc9e.jpeg" title="Kigh Ivan"></a></li>
+                            </ul>
+                        </div>
+                        <div class="wall-comment-list" style="margin-top:3px !important;">
+						<div class="wcl-list" id="commentsHere"></div><textarea  placeholder="type comment...." id="commentText"  class="form-control" rows="2"></textarea>
+						<button id="commentOn" data-role="83"class="btn btn-primary btn-sm btn-icon waves-effect waves-circle waves-float"><i class="zmdi zmdi-mail-send"></i>
+						</button>
+						<br style="clear:both;"/></div></div><div class="card">
+                        <div class="card-header">
+                            <div class="media">
+                                <div class="pull-left">
+                                    <img class="avatar-img a-lg" src="images/people/tatuUser.png" alt="">
+                                </div>
+                                <div class="media-body m-t-5">
+                                    <h2>Yoyoy<small>Posted on 2016-07-28 05:04:24</small></h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body card-padding">
+                            <p>YOyoyo
+</p><ul class="wall-attrs clearfix list-inline list-unstyled">
+                                <li class="wa-stats">
+                                <span><i class="zmdi zmdi-comments"></i>2</span><span id="dislikeBtn" class="active" data-role="84"><i class="zmdi zmdi-favorite"></i><span>
+                                	1
+                                	</span></span></li>
+                                <li class="wa-users"><a href="About/index/36/Kigh Ivan"><img src="images/people/1f272b623fc45812b06f79b4305571376ab8bc9e.jpeg" title="Kigh Ivan"></a></li>
+                            </ul>
+                        </div>
+                        <div class="wall-comment-list" style="margin-top:3px !important;">
+						<div class="wcl-list" id="commentsHere"><div class="media">
+	                    <a href="#" class="pull-left">
+	                        <img src="images/people/tatuUser.png" alt="" class="avatar-img">
+	                    </a>
+	                    <div class="media-body">
+	                        <a href="About/index/121/Yoyoy" class="a-title">Yoyoy</a> <small class="c-gray m-l-10">2016-07-28 05:04:33</small>
+	                        <p class="m-t-5 m-b-0">Heheh.</p>
+	                    </div>
+	                </div><div class="media">
+	                    <a href="#" class="pull-left">
+	                        <img src="images/people/18759473bb1e290994395553f71b5a9c5ad67e42.jpeg" alt="" class="avatar-img">
+	                    </a>
+	                    <div class="media-body">
+	                        <a href="About/index/37/Mukasa Keny" class="a-title">Mukasa Keny</a> <small class="c-gray m-l-10">2016-07-30 02:54:11</small>
+	                        <p class="m-t-5 m-b-0">Wangi? .</p>
+	                    </div>
+	                </div></div><textarea  placeholder="type comment...." id="commentText"  class="form-control" rows="2"></textarea>
+						<button id="commentOn" data-role="84"class="btn btn-primary btn-sm btn-icon waves-effect waves-circle waves-float"><i class="zmdi zmdi-mail-send"></i>
+						</button>
+						<br style="clear:both;"/></div></div><div class="card">
+                        <div class="card-header">
+                            <div class="media">
+                                <div class="pull-left">
+                                    <img class="avatar-img a-lg" src="images/people/63ae4e6bb505a2913bfd6b6c1061dec422797594." alt="">
+                                </div>
+                                <div class="media-body m-t-5">
+                                    <h2>Nakanyike Maggie<small>Posted on 2016-07-25 10:56:50</small></h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body card-padding">
+                            <p>hey friends am on tatuapp yeeeeee!!!!!!!</p><div class="wall-img-preview lightbox clearfix"><div class="wip-item" data-src="images/posts/88c885c3185ffa151abf41d36e977447.jpg" style="background-image: url(images/posts/88c885c3185ffa151abf41d36e977447.jpg);">
+                            <img src="images/posts/88c885c3185ffa151abf41d36e977447.jpg" alt="">
+                         </div></div><ul class="wall-attrs clearfix list-inline list-unstyled">
+                                <li class="wa-stats">
+                                <span><i class="zmdi zmdi-comments"></i>1</span><span id="likeBtn" data-role="75"><i class="zmdi zmdi-favorite"></i><span>2</span></span></li>
+                                <li class="wa-users"><a href="About/index/41/Mowzey"><img src="images/people/0adfd87194926c962131a5e710a1d08c5f691251.jpeg" title="Mowzey"></a><a href="About/index/111/Nakanyike Maggie"><img src="images/people/63ae4e6bb505a2913bfd6b6c1061dec422797594." title="Nakanyike Maggie"></a></li>
+                            </ul>
+                        </div>
+                        <div class="wall-comment-list" style="margin-top:3px !important;">
+						<div class="wcl-list" id="commentsHere"><div class="media">
+	                    <a href="#" class="pull-left">
+	                        <img src="images/people/63ae4e6bb505a2913bfd6b6c1061dec422797594." alt="" class="avatar-img">
+	                    </a>
+	                    <div class="media-body">
+	                        <a href="About/index/111/Nakanyike Maggie" class="a-title">Nakanyike Maggie</a> <small class="c-gray m-l-10">2016-07-25 10:57:04</small>
+	                        <p class="m-t-5 m-b-0">hey its mine.</p>
+	                    </div>
+	                </div></div><textarea  placeholder="type comment...." id="commentText"  class="form-control" rows="2"></textarea>
+						<button id="commentOn" data-role="75"class="btn btn-primary btn-sm btn-icon waves-effect waves-circle waves-float"><i class="zmdi zmdi-mail-send"></i>
+						</button>
+						<br style="clear:both;"/></div></div><div class="card">
+                        <div class="card-header">
+                            <div class="media">
+                                <div class="pull-left">
+                                    <img class="avatar-img a-lg" src="images/people/0f8875f3ce4425e818c1c652952e2392d2d3a074.jpeg" alt="">
+                                </div>
+                                <div class="media-body m-t-5">
+                                    <h2>Matilda N<small>Posted on 2016-07-25 08:36:08</small></h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body card-padding">
+                            <p></p><div class="wall-img-preview lightbox clearfix"><div class="wip-item" data-src="images/posts/67e829230e9ff62d504b7c885138b091.jpg" style="background-image: url(images/posts/67e829230e9ff62d504b7c885138b091.jpg);">
+                            <img src="images/posts/67e829230e9ff62d504b7c885138b091.jpg" alt="">
+                         </div></div><ul class="wall-attrs clearfix list-inline list-unstyled">
+                                <li class="wa-stats">
+                                <span><i class="zmdi zmdi-comments"></i>2</span><span id="dislikeBtn" class="active" data-role="69"><i class="zmdi zmdi-favorite"></i><span>
+                                	2
+                                	</span></span></li>
+                                <li class="wa-users"><a href="About/index/36/Kigh Ivan"><img src="images/people/1f272b623fc45812b06f79b4305571376ab8bc9e.jpeg" title="Kigh Ivan"></a><a href="About/index/106/Matilda N"><img src="images/people/0f8875f3ce4425e818c1c652952e2392d2d3a074.jpeg" title="Matilda N"></a></li>
+                            </ul>
+                        </div>
+                        <div class="wall-comment-list" style="margin-top:3px !important;">
+						<div class="wcl-list" id="commentsHere"><div class="media">
+	                    <a href="#" class="pull-left">
+	                        <img src="images/people/1f272b623fc45812b06f79b4305571376ab8bc9e.jpeg" alt="" class="avatar-img">
+	                    </a>
+	                    <div class="media-body">
+	                        <a href="About/index/36/Kigh Ivan" class="a-title">Kigh Ivan</a> <small class="c-gray m-l-10">2016-07-25 13:42:22</small>
+	                        <p class="m-t-5 m-b-0">nice one Matilda.</p>
+	                    </div>
+	                </div><div class="media">
+	                    <a href="#" class="pull-left">
+	                        <img src="images/people/1f272b623fc45812b06f79b4305571376ab8bc9e.jpeg" alt="" class="avatar-img">
+	                    </a>
+	                    <div class="media-body">
+	                        <a href="About/index/36/Kigh Ivan" class="a-title">Kigh Ivan</a> <small class="c-gray m-l-10">2016-07-25 13:42:22</small>
+	                        <p class="m-t-5 m-b-0">nice one Matilda.</p>
+	                    </div>
+	                </div></div><textarea  placeholder="type comment...." id="commentText"  class="form-control" rows="2"></textarea>
+						<button id="commentOn" data-role="69"class="btn btn-primary btn-sm btn-icon waves-effect waves-circle waves-float"><i class="zmdi zmdi-mail-send"></i>
+						</button>
+						<br style="clear:both;"/></div></div><div class="card">
+                        <div class="card-header">
+                            <div class="media">
+                                <div class="pull-left">
+                                    <img class="avatar-img a-lg" src="images/people/947a919711debaa8f395159ce6d657520bc2a0ac.jpeg" alt="">
+                                </div>
+                                <div class="media-body m-t-5">
+                                    <h2>Angee Jackline<small>Posted on 2016-07-25 02:07:10</small></h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body card-padding">
+                            <p></p><div class="wall-img-preview lightbox clearfix"><div class="wip-item" data-src="images/posts/b68c19eaa6a8025d9562627cabe1baa7.jpg" style="background-image: url(images/posts/b68c19eaa6a8025d9562627cabe1baa7.jpg);">
+                            <img src="images/posts/b68c19eaa6a8025d9562627cabe1baa7.jpg" alt="">
+                         </div></div><ul class="wall-attrs clearfix list-inline list-unstyled">
+                                <li class="wa-stats">
+                                <span><i class="zmdi zmdi-comments"></i>2</span><span id="dislikeBtn" class="active" data-role="65"><i class="zmdi zmdi-favorite"></i><span>
+                                	2
+                                	</span></span></li>
+                                <li class="wa-users"><a href="About/index/36/Kigh Ivan"><img src="images/people/1f272b623fc45812b06f79b4305571376ab8bc9e.jpeg" title="Kigh Ivan"></a><a href="About/index/39/kwizera innocent"><img src="images/people/2890ecbb8c4678f33b636b639487e9d8f15efb35.jpeg" title="kwizera innocent"></a></li>
+                            </ul>
+                        </div>
+                        <div class="wall-comment-list" style="margin-top:3px !important;">
+						<div class="wcl-list" id="commentsHere"><div class="media">
+	                    <a href="#" class="pull-left">
+	                        <img src="images/people/1f272b623fc45812b06f79b4305571376ab8bc9e.jpeg" alt="" class="avatar-img">
+	                    </a>
+	                    <div class="media-body">
+	                        <a href="About/index/36/Kigh Ivan" class="a-title">Kigh Ivan</a> <small class="c-gray m-l-10">2016-07-26 16:15:42</small>
+	                        <p class="m-t-5 m-b-0">naye wat am i liking for real .</p>
+	                    </div>
+	                </div><div class="media">
+	                    <a href="#" class="pull-left">
+	                        <img src="images/people/2890ecbb8c4678f33b636b639487e9d8f15efb35.jpeg" alt="" class="avatar-img">
+	                    </a>
+	                    <div class="media-body">
+	                        <a href="About/index/39/kwizera innocent" class="a-title">kwizera innocent</a> <small class="c-gray m-l-10">2016-07-31 12:25:49</small>
+	                        <p class="m-t-5 m-b-0">Katende watch out man hihi  just testing .</p>
+	                    </div>
+	                </div></div><textarea  placeholder="type comment...." id="commentText"  class="form-control" rows="2"></textarea>
+						<button id="commentOn" data-role="65"class="btn btn-primary btn-sm btn-icon waves-effect waves-circle waves-float"><i class="zmdi zmdi-mail-send"></i>
+						</button>
+						<br style="clear:both;"/></div></div><div class="card">
+                        <div class="card-header">
+                            <div class="media">
+                                <div class="pull-left">
+                                    <img class="avatar-img a-lg" src="images/people/18759473bb1e290994395553f71b5a9c5ad67e42.jpeg" alt="">
+                                </div>
+                                <div class="media-body m-t-5">
+                                    <h2>Mukasa Keny<small>Posted on 2016-07-23 23:20:59</small></h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body card-padding">
+                            <p>It’s easy to forget what an amazing gift life really is. Our lives are nothing but a cosmic blink. Even our seemingly all-encompassing world is just tiny blue dot circling an average sized star spiraling around a galaxy of 200-400 billion stars, which itself is just one galaxy among billions more. Yet for one brief moment, we get to experience the wonders of existence, of consciousness.</p><div class="wall-img-preview lightbox clearfix"><div class="wip-item" data-src="images/posts/c490b10f5d62bb5741defcefdcae1e5a.jpeg" style="background-image: url(images/posts/c490b10f5d62bb5741defcefdcae1e5a.jpeg);">
+                            <img src="images/posts/c490b10f5d62bb5741defcefdcae1e5a.jpeg" alt="">
+                         </div></div><ul class="wall-attrs clearfix list-inline list-unstyled">
+                                <li class="wa-stats">
+                                <span><i class="zmdi zmdi-comments"></i>2</span><span id="dislikeBtn" class="active" data-role="29"><i class="zmdi zmdi-favorite"></i><span>
+                                	5
+                                	</span></span></li>
+                                <li class="wa-users"><a href="About/index/36/Kigh Ivan"><img src="images/people/1f272b623fc45812b06f79b4305571376ab8bc9e.jpeg" title="Kigh Ivan"></a><a href="About/index/37/Mukasa Keny"><img src="images/people/18759473bb1e290994395553f71b5a9c5ad67e42.jpeg" title="Mukasa Keny"></a><a href="About/index/41/Mowzey"><img src="images/people/0adfd87194926c962131a5e710a1d08c5f691251.jpeg" title="Mowzey"></a><a href="About/index/97/Julius Mukasa"><img src="images/people/76a74d5413adc0d1cd04d852cb320e5e856b22bf.jpeg" title="Julius Mukasa"></a><a href="About/index/133/Namasembe Teo"><img src="images/people/tatuUser.png" title="Namasembe Teo"></a></li>
+                            </ul>
+                        </div>
+                        <div class="wall-comment-list" style="margin-top:3px !important;">
+						<div class="wcl-list" id="commentsHere"><div class="media">
+	                    <a href="#" class="pull-left">
+	                        <img src="images/people/76a74d5413adc0d1cd04d852cb320e5e856b22bf.jpeg" alt="" class="avatar-img">
+	                    </a>
+	                    <div class="media-body">
+	                        <a href="About/index/97/Julius Mukasa" class="a-title">Julius Mukasa</a> <small class="c-gray m-l-10">2016-07-25 03:09:44</small>
+	                        <p class="m-t-5 m-b-0">Hi all.</p>
+	                    </div>
+	                </div><div class="media">
+	                    <a href="#" class="pull-left">
+	                        <img src="images/people/18759473bb1e290994395553f71b5a9c5ad67e42.jpeg" alt="" class="avatar-img">
+	                    </a>
+	                    <div class="media-body">
+	                        <a href="About/index/37/Mukasa Keny" class="a-title">Mukasa Keny</a> <small class="c-gray m-l-10">2016-07-25 05:53:20</small>
+	                        <p class="m-t-5 m-b-0">halo.</p>
+	                    </div>
+	                </div></div><textarea  placeholder="type comment...." id="commentText"  class="form-control" rows="2"></textarea>
+						<button id="commentOn" data-role="29"class="btn btn-primary btn-sm btn-icon waves-effect waves-circle waves-float"><i class="zmdi zmdi-mail-send"></i>
+						</button>
+						<br style="clear:both;"/></div></div><div class="card">
+                        <div class="card-header">
+                            <div class="media">
+                                <div class="pull-left">
+                                    <img class="avatar-img a-lg" src="images/people/Dr-House-use-brain-funny-wallpaper.jpg" alt="">
+                                </div>
+                                <div class="media-body m-t-5">
+                                    <h2>wally<small>Posted on 2016-07-05 05:31:33</small></h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body card-padding">
+                            <p>the important thing in life is not the triumph bt the struggle</p><ul class="wall-attrs clearfix list-inline list-unstyled">
+                                <li class="wa-stats">
+                                <span><i class="zmdi zmdi-comments"></i>0</span><span id="likeBtn" data-role="37"><i class="zmdi zmdi-favorite"></i><span>4</span></span></li>
+                                <li class="wa-users"><a href="About/index/37/Mukasa Keny"><img src="images/people/18759473bb1e290994395553f71b5a9c5ad67e42.jpeg" title="Mukasa Keny"></a><a href="About/index/39/kwizera innocent"><img src="images/people/2890ecbb8c4678f33b636b639487e9d8f15efb35.jpeg" title="kwizera innocent"></a><a href="About/index/41/Mowzey"><img src="images/people/0adfd87194926c962131a5e710a1d08c5f691251.jpeg" title="Mowzey"></a><a href="About/index/41/Mowzey"><img src="images/people/0adfd87194926c962131a5e710a1d08c5f691251.jpeg" title="Mowzey"></a></li>
+                            </ul>
+                        </div>
+                        <div class="wall-comment-list" style="margin-top:3px !important;">
+						<div class="wcl-list" id="commentsHere"></div><textarea  placeholder="type comment...." id="commentText"  class="form-control" rows="2"></textarea>
+						<button id="commentOn" data-role="37"class="btn btn-primary btn-sm btn-icon waves-effect waves-circle waves-float"><i class="zmdi zmdi-mail-send"></i>
+						</button>
+						<br style="clear:both;"/></div></div><div class="card">
+                        <div class="card-header">
+                            <div class="media">
+                                <div class="pull-left">
+                                    <img class="avatar-img a-lg" src="images/people/20111111_C4869_PHOTO_EN_6508.jpg" alt="">
+                                </div>
+                                <div class="media-body m-t-5">
+                                    <h2>hashim<small>Posted on 2016-07-04 04:27:17</small></h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body card-padding">
+                            <p>welcome aboard
+</p><div class="wall-img-preview lightbox clearfix"><div class="wip-item" data-src="images/posts/0751959853moraine-lake-winter-banff-national-park-alberta-canada-nature-images.jpg" style="background-image: url(images/posts/0751959853moraine-lake-winter-banff-national-park-alberta-canada-nature-images.jpg);">
+                            <img src="images/posts/0751959853moraine-lake-winter-banff-national-park-alberta-canada-nature-images.jpg" alt="">
+                         </div></div><ul class="wall-attrs clearfix list-inline list-unstyled">
+                                <li class="wa-stats">
+                                <span><i class="zmdi zmdi-comments"></i>1</span><span id="dislikeBtn" class="active" data-role="51"><i class="zmdi zmdi-favorite"></i><span>
+                                	5
+                                	</span></span></li>
+                                <li class="wa-users"><a href="About/index/36/Kigh Ivan"><img src="images/people/1f272b623fc45812b06f79b4305571376ab8bc9e.jpeg" title="Kigh Ivan"></a><a href="About/index/37/Mukasa Keny"><img src="images/people/18759473bb1e290994395553f71b5a9c5ad67e42.jpeg" title="Mukasa Keny"></a><a href="About/index/39/kwizera innocent"><img src="images/people/2890ecbb8c4678f33b636b639487e9d8f15efb35.jpeg" title="kwizera innocent"></a><a href="About/index/41/Mowzey"><img src="images/people/0adfd87194926c962131a5e710a1d08c5f691251.jpeg" title="Mowzey"></a><a href="About/index/75/hashim"><img src="images/people/20111111_C4869_PHOTO_EN_6508.jpg" title="hashim"></a></li>
+                            </ul>
+                        </div>
+                        <div class="wall-comment-list" style="margin-top:3px !important;">
+						<div class="wcl-list" id="commentsHere"><div class="media">
+	                    <a href="#" class="pull-left">
+	                        <img src="images/people/2890ecbb8c4678f33b636b639487e9d8f15efb35.jpeg" alt="" class="avatar-img">
+	                    </a>
+	                    <div class="media-body">
+	                        <a href="About/index/39/kwizera innocent" class="a-title">kwizera innocent</a> <small class="c-gray m-l-10">2016-07-27 11:13:32</small>
+	                        <p class="m-t-5 m-b-0">nice one.</p>
+	                    </div>
+	                </div></div><textarea  placeholder="type comment...." id="commentText"  class="form-control" rows="2"></textarea>
+						<button id="commentOn" data-role="51"class="btn btn-primary btn-sm btn-icon waves-effect waves-circle waves-float"><i class="zmdi zmdi-mail-send"></i>
+						</button>
+						<br style="clear:both;"/></div></div><div class="card">
+                        <div class="card-header">
+                            <div class="media">
+                                <div class="pull-left">
+                                    <img class="avatar-img a-lg" src="images/people/tatuUser.png" alt="">
+                                </div>
+                                <div class="media-body m-t-5">
+                                    <h2>Taabu Joseph<small>Posted on 2016-07-01 03:11:21</small></h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body card-padding">
+                            <p>smart brain</p><ul class="wall-attrs clearfix list-inline list-unstyled">
+                                <li class="wa-stats">
+                                <span><i class="zmdi zmdi-comments"></i>0</span><span id="likeBtn" data-role="42"><i class="zmdi zmdi-favorite"></i><span>3</span></span></li>
+                                <li class="wa-users"><a href="About/index/37/Mukasa Keny"><img src="images/people/18759473bb1e290994395553f71b5a9c5ad67e42.jpeg" title="Mukasa Keny"></a><a href="About/index/41/Mowzey"><img src="images/people/0adfd87194926c962131a5e710a1d08c5f691251.jpeg" title="Mowzey"></a><a href="About/index/65/Taabu Joseph"><img src="images/people/tatuUser.png" title="Taabu Joseph"></a></li>
+                            </ul>
+                        </div>
+                        <div class="wall-comment-list" style="margin-top:3px !important;">
+						<div class="wcl-list" id="commentsHere"></div><textarea  placeholder="type comment...." id="commentText"  class="form-control" rows="2"></textarea>
+						<button id="commentOn" data-role="42"class="btn btn-primary btn-sm btn-icon waves-effect waves-circle waves-float"><i class="zmdi zmdi-mail-send"></i>
+						</button>
+						<br style="clear:both;"/></div></div><div class="card">
+                        <div class="card-header">
+                            <div class="media">
+                                <div class="pull-left">
+                                    <img class="avatar-img a-lg" src="images/people/IMG_20160417_162613.jpg" alt="">
+                                </div>
+                                <div class="media-body m-t-5">
+                                    <h2>Mukasa Ssali Douglas<small>Posted on 2016-06-30 08:58:35</small></h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body card-padding">
+                            <p>I am very happy to join Tatu</p><ul class="wall-attrs clearfix list-inline list-unstyled">
+                                <li class="wa-stats">
+                                <span><i class="zmdi zmdi-comments"></i>6</span><span id="likeBtn" data-role="40"><i class="zmdi zmdi-favorite"></i><span>3</span></span></li>
+                                <li class="wa-users"><a href="About/index/37/Mukasa Keny"><img src="images/people/18759473bb1e290994395553f71b5a9c5ad67e42.jpeg" title="Mukasa Keny"></a><a href="About/index/39/kwizera innocent"><img src="images/people/2890ecbb8c4678f33b636b639487e9d8f15efb35.jpeg" title="kwizera innocent"></a><a href="About/index/63/Mukasa Ssali Douglas"><img src="images/people/IMG_20160417_162613.jpg" title="Mukasa Ssali Douglas"></a></li>
+                            </ul>
+                        </div>
+                        <div class="wall-comment-list" style="margin-top:3px !important;">
+						<div class="wcl-list" id="commentsHere"><div class="media">
+	                    <a href="#" class="pull-left">
+	                        <img src="images/people/18759473bb1e290994395553f71b5a9c5ad67e42.jpeg" alt="" class="avatar-img">
+	                    </a>
+	                    <div class="media-body">
+	                        <a href="About/index/37/Mukasa Keny" class="a-title">Mukasa Keny</a> <small class="c-gray m-l-10">2016-06-30 11:31:09</small>
+	                        <p class="m-t-5 m-b-0">Welcome bro.......</p>
+	                    </div>
+	                </div><div class="media">
+	                    <a href="#" class="pull-left">
+	                        <img src="images/people/2890ecbb8c4678f33b636b639487e9d8f15efb35.jpeg" alt="" class="avatar-img">
+	                    </a>
+	                    <div class="media-body">
+	                        <a href="About/index/39/kwizera innocent" class="a-title">kwizera innocent</a> <small class="c-gray m-l-10">2016-07-01 02:30:41</small>
+	                        <p class="m-t-5 m-b-0">thats the supporting spirit we need...</p>
+	                    </div>
+	                </div></div><h6><i><a href="#" data-role="40" id="viewMore" data-toggle="modal" data-target="#myModal" >
+								View all comments on this update</a></i></h6><textarea  placeholder="type comment...." id="commentText"  class="form-control" rows="2"></textarea>
+						<button id="commentOn" data-role="40"class="btn btn-primary btn-sm btn-icon waves-effect waves-circle waves-float"><i class="zmdi zmdi-mail-send"></i>
+						</button>
+						<br style="clear:both;"/></div></div><div class="card">
+                        <div class="card-header">
+                            <div class="media">
+                                <div class="pull-left">
+                                    <img class="avatar-img a-lg" src="images/people/0758203821IMG_20160630_095833.jpg" alt="">
+                                </div>
+                                <div class="media-body m-t-5">
+                                    <h2>Ssenyonga Patrick<small>Posted on 2016-06-30 03:33:30</small></h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body card-padding">
+                            <p></p><div class="wall-img-preview lightbox clearfix"><div class="wip-item" data-src="images/posts/0758203821funny-quotes-5.jpg" style="background-image: url(images/posts/0758203821funny-quotes-5.jpg);">
+                            <img src="images/posts/0758203821funny-quotes-5.jpg" alt="">
+                         </div></div><ul class="wall-attrs clearfix list-inline list-unstyled">
+                                <li class="wa-stats">
+                                <span><i class="zmdi zmdi-comments"></i>2</span><span id="likeBtn" data-role="38"><i class="zmdi zmdi-favorite"></i><span>3</span></span></li>
+                                <li class="wa-users"><a href="About/index/37/Mukasa Keny"><img src="images/people/18759473bb1e290994395553f71b5a9c5ad67e42.jpeg" title="Mukasa Keny"></a><a href="About/index/39/kwizera innocent"><img src="images/people/2890ecbb8c4678f33b636b639487e9d8f15efb35.jpeg" title="kwizera innocent"></a><a href="About/index/41/Mowzey"><img src="images/people/0adfd87194926c962131a5e710a1d08c5f691251.jpeg" title="Mowzey"></a></li>
+                            </ul>
+                        </div>
+                        <div class="wall-comment-list" style="margin-top:3px !important;">
+						<div class="wcl-list" id="commentsHere"><div class="media">
+	                    <a href="#" class="pull-left">
+	                        <img src="images/people/2890ecbb8c4678f33b636b639487e9d8f15efb35.jpeg" alt="" class="avatar-img">
+	                    </a>
+	                    <div class="media-body">
+	                        <a href="About/index/39/kwizera innocent" class="a-title">kwizera innocent</a> <small class="c-gray m-l-10">2016-06-30 05:58:04</small>
+	                        <p class="m-t-5 m-b-0">assured,....i believe.</p>
+	                    </div>
+	                </div><div class="media">
+	                    <a href="#" class="pull-left">
+	                        <img src="images/people/2890ecbb8c4678f33b636b639487e9d8f15efb35.jpeg" alt="" class="avatar-img">
+	                    </a>
+	                    <div class="media-body">
+	                        <a href="About/index/39/kwizera innocent" class="a-title">kwizera innocent</a> <small class="c-gray m-l-10">2016-07-02 14:15:26</small>
+	                        <p class="m-t-5 m-b-0">And then.</p>
+	                    </div>
+	                </div></div><textarea  placeholder="type comment...." id="commentText"  class="form-control" rows="2"></textarea>
+						<button id="commentOn" data-role="38"class="btn btn-primary btn-sm btn-icon waves-effect waves-circle waves-float"><i class="zmdi zmdi-mail-send"></i>
+						</button>
+						<br style="clear:both;"/></div></div><div class="card">
+                        <div class="card-header">
+                            <div class="media">
+                                <div class="pull-left">
+                                    <img class="avatar-img a-lg" src="images/people/0706760108IMG_20160426_155336.jpg" alt="">
+                                </div>
+                                <div class="media-body m-t-5">
+                                    <h2>Nakabaale Ronald<small>Posted on 2016-06-30 01:17:15</small></h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body card-padding">
+                            <p></p><div class="wall-img-preview lightbox clearfix"><div class="wip-item" data-src="images/posts/0706760108C360_2016-04-28-14-05-19-815.jpg" style="background-image: url(images/posts/0706760108C360_2016-04-28-14-05-19-815.jpg);">
+                            <img src="images/posts/0706760108C360_2016-04-28-14-05-19-815.jpg" alt="">
+                         </div></div><ul class="wall-attrs clearfix list-inline list-unstyled">
+                                <li class="wa-stats">
+                                <span><i class="zmdi zmdi-comments"></i>1</span><span id="dislikeBtn" class="active" data-role="36"><i class="zmdi zmdi-favorite"></i><span>
+                                	2
+                                	</span></span></li>
+                                <li class="wa-users"><a href="About/index/36/Kigh Ivan"><img src="images/people/1f272b623fc45812b06f79b4305571376ab8bc9e.jpeg" title="Kigh Ivan"></a><a href="About/index/37/Mukasa Keny"><img src="images/people/18759473bb1e290994395553f71b5a9c5ad67e42.jpeg" title="Mukasa Keny"></a></li>
+                            </ul>
+                        </div>
+                        <div class="wall-comment-list" style="margin-top:3px !important;">
+						<div class="wcl-list" id="commentsHere"><div class="media">
+	                    <a href="#" class="pull-left">
+	                        <img src="images/people/18759473bb1e290994395553f71b5a9c5ad67e42.jpeg" alt="" class="avatar-img">
+	                    </a>
+	                    <div class="media-body">
+	                        <a href="About/index/37/Mukasa Keny" class="a-title">Mukasa Keny</a> <small class="c-gray m-l-10">2016-07-02 14:53:52</small>
+	                        <p class="m-t-5 m-b-0">Well done .</p>
+	                    </div>
+	                </div></div><textarea  placeholder="type comment...." id="commentText"  class="form-control" rows="2"></textarea>
+						<button id="commentOn" data-role="36"class="btn btn-primary btn-sm btn-icon waves-effect waves-circle waves-float"><i class="zmdi zmdi-mail-send"></i>
+						</button>
+						<br style="clear:both;"/></div></div><div class="card">
+                        <div class="card-header">
+                            <div class="media">
+                                <div class="pull-left">
+                                    <img class="avatar-img a-lg" src="images/people/rBVaEVbyudOAPlpDAAJDOiMtf_M734.jpg" alt="">
+                                </div>
+                                <div class="media-body m-t-5">
+                                    <h2>MARY ESTHER<small>Posted on 2016-06-29 07:22:43</small></h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body card-padding">
+                            <p>Having beautiful lunch
+</p><ul class="wall-attrs clearfix list-inline list-unstyled">
+                                <li class="wa-stats">
+                                <span><i class="zmdi zmdi-comments"></i>1</span><span id="likeBtn" data-role="34"><i class="zmdi zmdi-favorite"></i><span>2</span></span></li>
+                                <li class="wa-users"><a href="About/index/37/Mukasa Keny"><img src="images/people/18759473bb1e290994395553f71b5a9c5ad67e42.jpeg" title="Mukasa Keny"></a><a href="About/index/39/kwizera innocent"><img src="images/people/2890ecbb8c4678f33b636b639487e9d8f15efb35.jpeg" title="kwizera innocent"></a></li>
+                            </ul>
+                        </div>
+                        <div class="wall-comment-list" style="margin-top:3px !important;">
+						<div class="wcl-list" id="commentsHere"><div class="media">
+	                    <a href="#" class="pull-left">
+	                        <img src="images/people/2890ecbb8c4678f33b636b639487e9d8f15efb35.jpeg" alt="" class="avatar-img">
+	                    </a>
+	                    <div class="media-body">
+	                        <a href="About/index/39/kwizera innocent" class="a-title">kwizera innocent</a> <small class="c-gray m-l-10">2016-06-29 09:27:29</small>
+	                        <p class="m-t-5 m-b-0">niceee.</p>
+	                    </div>
+	                </div></div><textarea  placeholder="type comment...." id="commentText"  class="form-control" rows="2"></textarea>
+						<button id="commentOn" data-role="34"class="btn btn-primary btn-sm btn-icon waves-effect waves-circle waves-float"><i class="zmdi zmdi-mail-send"></i>
+						</button>
+						<br style="clear:both;"/></div></div><div class="card">
+                        <div class="card-header">
+                            <div class="media">
+                                <div class="pull-left">
+                                    <img class="avatar-img a-lg" src="images/people/IMG-20160628-WA0006_-_Copy.jpg" alt="">
+                                </div>
+                                <div class="media-body m-t-5">
+                                    <h2>kyeyune Jackie<small>Posted on 2016-06-29 03:53:14</small></h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body card-padding">
+                            <p>the world of elites</p><ul class="wall-attrs clearfix list-inline list-unstyled">
+                                <li class="wa-stats">
+                                <span><i class="zmdi zmdi-comments"></i>0</span><span id="likeBtn" data-role="33"><i class="zmdi zmdi-favorite"></i><span>2</span></span></li>
+                                <li class="wa-users"><a href="About/index/37/Mukasa Keny"><img src="images/people/18759473bb1e290994395553f71b5a9c5ad67e42.jpeg" title="Mukasa Keny"></a><a href="About/index/39/kwizera innocent"><img src="images/people/2890ecbb8c4678f33b636b639487e9d8f15efb35.jpeg" title="kwizera innocent"></a></li>
+                            </ul>
+                        </div>
+                        <div class="wall-comment-list" style="margin-top:3px !important;">
+						<div class="wcl-list" id="commentsHere"></div><textarea  placeholder="type comment...." id="commentText"  class="form-control" rows="2"></textarea>
+						<button id="commentOn" data-role="33"class="btn btn-primary btn-sm btn-icon waves-effect waves-circle waves-float"><i class="zmdi zmdi-mail-send"></i>
+						</button>
+						<br style="clear:both;"/></div></div>                            <!-- all updates ende here  -->
+                        </div>
+                        <div class="col-md-4 hidden-sm">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h2>My quote </h2>
+                                </div>
+
+                                <div class="card-body card-padding">If you are in love with more than one person, then what is inside you is nolonger a heart,its a memory card. Happy monday ba comrades mwenna  <a data-ui-sref="pages.profile.profile-about"><small>Read more...</small></a>
+                                </div>
+                            </div>
+                                                        <div class="card picture-list">
+                                <div class="pl-body clearfix">
+                                    <div class='thumbs'><div class='thumbnail'> <img src='images/posts/90b5e171d84ed3cf4e4ed1af5fd99cb6.jpg'/></div><div class='caption'>And every story ends
+But we could still pretend
+Every single moment will be just as we had planned
+It was some type of love
+That's some type of love
+
+Read more: Charlie Puth - Some Type Of Love Lyrics | MetroLyrics </div><br/><a href="Userupdate/index">go to your update</a></div>                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header">
+                                    <h2>Recent Comments [3]</h2>
+                                </div>
+                                 <div class="list-group lg-alt">
+                                <a href="#" class="list-group-item media">
+                                                    <div class="pull-left">
+                                                        <img class="avatar-img mCS_img_loaded" src="images/people/1f272b623fc45812b06f79b4305571376ab8bc9e.jpeg" alt="">
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <div class="lgi-heading">Kigh Ivan</div>
+                                                        <small class="lgi-text">
+                                                        hey
+                                                        </small>
+                                                    </div>
+                                                 </a><a href="#" class="list-group-item media">
+                                                    <div class="pull-left">
+                                                        <img class="avatar-img mCS_img_loaded" src="images/people/1f272b623fc45812b06f79b4305571376ab8bc9e.jpeg" alt="">
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <div class="lgi-heading">Kigh Ivan</div>
+                                                        <small class="lgi-text">
+                                                        . Our lives are nothing but a cosmic blink. Even our seemingly all-encompassing world is just tiny blue dot circling an average sized star spiraling around a galaxy of 200-400 billion stars, which itself is just one galaxy among billions more. Yet for one brief
+                                                        </small>
+                                                    </div>
+                                                 </a><a href="#" class="list-group-item media">
+                                                    <div class="pull-left">
+                                                        <img class="avatar-img mCS_img_loaded" src="images/people/0adfd87194926c962131a5e710a1d08c5f691251.jpeg" alt="">
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <div class="lgi-heading">Mowzey</div>
+                                                        <small class="lgi-text">
+                                                        average sized star spiraling around a galaxy of 200-400 billion stars, which itself is just one galaxy among billions more. Yet for one brief.
+                                                        </small>
+                                                    </div>
+                                                 </a>                                </div>
+                                <a href="Userupdate/index" class="list-group-item view-more">
+                                    <i class="zmdi zmdi-long-arrow-right"></i> View all
+                                </a>
+                            </div>
+                                                    </div>
+                    </div>
+                </div>
+            </section>
+            <footer id="footer">
+                Copyright &copy; 2016 tatuapp.com
+
+            </footer>
+        </section>
+        <div class="page-loader palette-Teal bg">
+           <div class="preloader pl-xl pls-white">
+                <svg class="pl-circular" viewBox="25 25 50 50">
+                    <circle class="plc-path" cx="50" cy="50" r="20"/>
+                </svg>
+            </div>
+        </div>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="js/waves.min.js"></script>
+        <script src="js/bootstrap-growl.min.js"></script>
+        <script src="js/lightgallery-all.min.js"></script>
+        <script src="js/autosize.min.js"></script>
+        <script src="js/functions.js"></script>
+        <script src="js/actions.js"></script>
+        <script src="js/demo.js"></script>
+        <script src="js/getNotifications.js"></script>
+        <script src="js/wall.js"></script>
+        <script src="js/search.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function(){
+
+        $(document).on('click','#commentText',function(){
+        var commentBtn = $(this).next();
+        commentBtn.fadeIn();
+
+        $(commentBtn).on("click", function(e){
+        var data = $(this).prev().val();
+        var id = $(commentBtn).attr("data-role");
+        if(data.length === 0)
+        {
+
+        }
+        else
+        {
+            $(this).attr("disabled", "disabled");
+            $.ajax({url:"commentOnUpdate", type:"post", data:{data:data, id:id}, success: function(info) 
+            {
+                userPic =  $('#userPic').attr('src');
+                userName =  $('#userPic').attr('alt');
+                $(commentBtn).siblings('#commentsHere').append('<div class="media"><a class="pull-left" href="#"><img class="media-object" src="'+userPic+'" alt="Media Object" width="30"/></a><div class="media-body" id="mediabody1"><h5 id="mediabody-h5">'+userName+'</h5>'+ data +'<br/><i id="mediabody-i">just now</i></div></div>');
+            }
+            });
+        }
+        e.preventDefault();
+        });
+        });
+
+        $(document).on('click','#viewMore', function(e){
+            var update_id = $(this).attr('data-role');
+            var url = "getComments";
+            $.ajax({
+                url:url, 
+                type:"post", 
+                dataType:"text", 
+                data:{update_id:update_id}, 
+                success:function(info){
+                   $("#commentsHereModal").html(info);
+                }
+            });
+        });
+
+    });
+        </script>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+   <div class="modal-dialog" id="dialog">
+      <div class="modal-content">
+        <div class="modal-header" style="padding:2px !important; margin:2px 2px 2px;">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="background:teal; color:#fff; padding:8px; z-index:20; border-bottom-right-radius:7px; border-bottom-left-radius:7px;">
+            &times; 
+            </button>
+         </div>
+         <div class="modal-body" id="modalbody">
+            <div class="rows">
+                <div class="col-md-12 col-sm-12 col-xs-12" id="col-md-6-padding" >
+                    <div class='panel panel-primary' id="md-6-panel">
+                        <div class='panel-body' id="commentsHereModal">
+                        </div>
+                    </div>
+                    <br style="clear:both;"/>
+                </div>
+            </div>
+            <br style="clear:both;"/>
+        </div>
+        </div>
+      </div>
+</div>
+</body>
+</html>

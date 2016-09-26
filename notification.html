@@ -1,0 +1,211 @@
+
+<!DOCTYPE html>
+    <!--[if IE 9 ]><html class="ie9"><![endif]-->
+    
+<!-- Mirrored from byrushan.com/projects/mae/1-0/list-view.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 13 Jul 2016 14:37:06 GMT -->
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Tatu notifications</title>
+        
+        <!-- Vendor CSS -->
+        <link href="css/animate.min.css" rel="stylesheet">
+        <link href="css/material-design-iconic-font.min.css" rel="stylesheet">
+      <!--   <link href="css/material-design-iconic-font.min.css" rel="stylesheet"> -->
+        <link href="css/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+        <link href="css/palette.css" rel="stylesheet">
+            
+        <!-- CSS -->
+        <link href="css/app.min.1.css" rel="stylesheet">
+        <link href="css/app.min.2.css" rel="stylesheet">
+    </head>
+
+    <body data-ma-header="teal">
+        <header id="header" class="media">
+            <div class="pull-left h-logo">
+                <a href="" class="hidden-xs">
+                    Tatu App
+                </a>
+                <div class="menu-collapse" data-ma-action="sidebar-open" data-ma-target="main-menu">
+                    <div class="mc-wrap">
+                        <div class="mcw-line top palette-White bg"></div>
+                        <div class="mcw-line center palette-White bg"></div>
+                        <div class="mcw-line bottom palette-White bg"></div>
+                    </div>
+                </div>
+            </div>
+
+            <ul class="pull-right h-menu">
+                <li class="hm-search-trigger">
+                    <a href="#" data-ma-action="search-open">
+                        <i class="hm-icon zmdi zmdi-search"></i>
+                    </a>
+                </li>
+                <li class="dropdown hidden-xs">
+                    <a data-toggle="dropdown" href="#"><i class="hm-icon zmdi zmdi-more-vert"></i></a>
+                    <ul class="dropdown-menu dm-icon pull-right">
+                        <li>
+                            <a href="Logout/index"><i class="zmdi zmdi-settings"></i> log out</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="hm-alerts" data-user-alert="sua-messages" data-ma-action="sidebar-open" data-ma-target="user-alerts">
+                    <a href="#"><i class="hm-icon zmdi zmdi-notifications"></i></a>
+                </li>
+                <li class="dropdown hm-profile">
+                    <a href="Profile.html">
+                        <img id="userPic"  src="images/people/1f272b623fc45812b06f79b4305571376ab8bc9e.jpeg" alt="Kigh Ivan">
+                    </a>
+                </li>
+            </ul>
+
+            <div class="media-body h-search" >
+                <form action="Search/index" id="searcfm" class="p-relative" method="post" accept-charset="utf-8">
+                    <input type="text" class="hs-input" placeholder="Search for people" id='search'/>
+                     <i id='itag' class="zmdi zmdi-search hs-reset" data-ma-action="search-clear"></i>
+                    </form>
+                    </div>
+                <div style='position: relative;'>
+                <div class='col-md-12 col-sm-12 col-xs-12' style='background: #eff; border-radius:3px; display:none; z-index:2050; border:1px solid #ccc; overflow:auto; position: absolute; height:400px;' id='results'>
+                    
+                </div>
+                </div>
+        </header>
+        <section id="main">
+           <aside id="s-user-alerts" class="sidebar">
+                <ul class="tab-nav tn-justified tn-icon m-t-10" data-tab-color="teal">
+                    <li><a class="sua-messages" href="#sua-messages" data-toggle="tab"><i class="zmdi zmdi-email"></i></a></li>
+                    <li><a class="sua-notifications" href="#sua-notifications" data-toggle="tab"><i class="zmdi zmdi-notifications"></i></a></li>
+                </ul>
+
+                <div class="tab-content">
+                    <div class="tab-pane fade" id="sua-messages">
+                        <ul class="sua-menu list-inline list-unstyled palette-Light-Blue bg">
+                            <li><a href="#" data-ma-action="sidebar-close"><i class="zmdi zmdi-close"></i> Close</a></li>
+                        </ul>
+
+                        <div class="list-group lg-alt c-overflow" id="showNewMessages" >
+                            
+                        </div>
+
+                        <a href="#" class="btn btn-float btn-danger m-btn">
+                            <i class="zmdi zmdi-plus"></i>
+                        </a>
+                    </div>
+                    <div class="tab-pane fade" id="sua-notifications">
+                        <ul class="sua-menu list-inline list-unstyled palette-Orange bg">
+                            <li><a href="#" data-ma-action="sidebar-close"><i class="zmdi zmdi-close"></i> Close</a></li>
+                        </ul>
+                        <!-- div that gets the new notoficaions -->
+                        <div class="list-group lg-alt c-overflow" id="showNotifications">
+                        
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <aside id="s-main-menu" class="sidebar">
+                <div class="smm-header">
+                    <i class="zmdi zmdi-long-arrow-left" data-ma-action="sidebar-close"></i>
+                </div>
+                <ul class="smm-alerts">
+                    <li data-user-alert="sua-messages" data-ma-action="sidebar-open" data-ma-target="user-alerts">
+                        <i class="zmdi zmdi-email"></i>
+                    </li>
+                    <li data-user-alert="sua-notifications" data-ma-action="sidebar-open" data-ma-target="user-alerts">
+                        <i class="zmdi zmdi-notifications"></i>
+                    </li>
+                </ul>
+                <ul class="main-menu">
+                    <li class="sub-menu active">
+                        <ul>
+                            <li><a href="Wall.html"><i class="zmdi zmdi-home m-r-5"></i> Home</a></li>
+                            <li><a href="Profile.html"> <i class="zmdi zmdi-account m-r-5"></i> Profile</a></li>
+                            <li><a href="notification.html"><i class="zmdi zmdi-notifications m-r-5"></i> Notifications</a></li>
+                            <li><a href="messages.html"> <i class="zmdi zmdi-email m-r-5"></i> Messages</a></li>
+                            <li><a href="Contacts/index"> <i class="zmdi  zmdi-local-wc m-r-5"></i> people</a></li>
+                            <li><a href="Help/index"> <i class="zmdi  zmdi-help"></i> Help us improve tatu</a></li>
+                        </ul>
+                    </li>
+                </ul> 
+            </aside>
+
+            <section id="content">
+                <div class="container">
+                    <div class="card">
+                        <div class="action-header palette-Teal-400 bg clearfix">
+                            <div class="ah-label hidden-xs palette-White text">Notifications</div>
+
+                            <div class="ah-search">
+                                <input type="text" placeholder="Start typing..." class="ahs-input">
+
+                                <i class="ah-search-close zmdi zmdi-long-arrow-left" data-ma-action="ah-search-close"></i>
+                            </div>
+
+                            <ul class="ah-actions actions a-alt">
+                                <li>
+                                    <a href="#" class="ah-search-trigger" data-ma-action="ah-search-open">
+                                        <i class="zmdi zmdi-search"></i>
+                                    </a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" data-toggle="dropdown" aria-expanded="true">
+                                        <i class="zmdi zmdi-more-vert"></i>
+                                    </a>
+
+                                    <ul class="dropdown-menu dropdown-menu-right">
+                                        <li>
+                                            <a href="Notifications/index">Refresh</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="list-group lg-alt lg-even-black">
+                            <div class="list-group-item media">
+		                <a  href="#" class="pull-left">
+		                    <img src="images/people/1f272b623fc45812b06f79b4305571376ab8bc9e.jpeg" class = "media-object" style="height:35px !important; width:35px !important;"/>
+		                </a>
+		                <div class="media-body"><div class="lgi-heading">You liked your update. </b> </div> <small class="lgi-text"><i>2016-07-28 16:22:02</i></small>
+		                </div>
+	                </div><div class="list-group-item media">
+		                <a  href="#" class="pull-left">
+		                    <img src="images/people/1f272b623fc45812b06f79b4305571376ab8bc9e.jpeg" class = "media-object" style="height:35px !important; width:35px !important;"/>
+		                </a>
+		                <div class="media-body"><div class="lgi-heading"><b><a href="About/index/36/You">You</a></b>, commented on your update: <b>hey wats up guys </b> </div> <small class="lgi-text"><i>2016-07-28 16:22:12</i></small>
+		                </div>
+	                </div><div class="list-group-item media">
+		                <a  href="#" class="pull-left">
+		                    <img src="images/people/tatuUser.png" class = "media-object" style="height:35px !important; width:35px !important;"/>
+		                </a>
+		                <div class="media-body"><div class="lgi-heading">You and <b><a href="About/index/120/Johnson Mangeni">Johnson Mangeni, </a> followed you back,   and you are now friends </b> </div> <small class="lgi-text"><i>2016-07-28 19:13:17</i></small>
+		                </div>
+	                </div><div class="list-group-item media">
+		                <a  href="#" class="pull-left">
+		                    <img src="images/people/tatuUser.png" class = "media-object" style="height:35px !important; width:35px !important;"/>
+		                </a>
+		                <div class="media-body"><div class="lgi-heading">You and <b><a href="About/index/120/Johnson Mangeni">Johnson Mangeni, </a> followed you back,   and you are now friends </b> </div> <small class="lgi-text"><i>2016-07-29 06:57:45</i></small>
+		                </div>
+	                </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer id="footer">
+                Copyright &copy; 2016 www.tatuapp.com
+            </footer>
+        </section>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="js/waves.min.js"></script>
+        <script src="js/bootstrap-growl.min.js"></script>        
+        <script src="js/functions.js"></script>
+        <script src="js/actions.js"></script>
+        <script src="js/demo.js"></script>
+        <script src="js/search.js"></script>
+    </body>
+</html>
